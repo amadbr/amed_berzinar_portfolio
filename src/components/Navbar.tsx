@@ -40,11 +40,13 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <a
             href={getHref("#home")}
-            className="text-xl font-bold text-gray-900 dark:text-white hover:text-green-500 dark:hover:text-green-400 transition-colors"
+            className="block hover:opacity-80 transition-opacity"
           >
-            <span className="text-green-500">&lt;</span>
-            Amed
-            <span className="text-green-500">/&gt;</span>
+            <img
+              src="/images/image_with_text.png"
+              alt="Amed Berzinar"
+              className="h-10 md:h-12 w-auto"
+            />
           </a>
 
           {/* Desktop Links */}
