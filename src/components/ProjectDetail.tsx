@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiArrowLeft, FiExternalLink, FiGithub } from "react-icons/fi";
@@ -7,6 +8,9 @@ import AnimatedSection from "./AnimatedSection";
 import { Project } from "@/data/portfolio";
 
 export default function ProjectDetail({ project }: { project: Project }) {
+  const [selectedImage, setSelectedImage] = useState(0);
+  const gallery = project.images?.length ? project.images : null;
+
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
       {/* Back Link */}
@@ -40,26 +44,96 @@ export default function ProjectDetail({ project }: { project: Project }) {
         </div>
       </AnimatedSection>
 
-      {/* Project Image Placeholder */}
+      {/* Action Buttons */}
       <AnimatedSection delay={0.1}>
-        <div className="relative h-64 sm:h-80 rounded-xl overflow-hidden bg-gradient-to-br from-green-500/10 to-green-400/5 border border-gray-200 dark:border-white/10 mb-10">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
-              <span className="text-6xl block mb-3">
-                {project.category === "Mobile App"
-                  ? "📱"
-                  : project.category === "Desktop App"
-                    ? "🖥️"
-                    : project.category === "API"
-                      ? "⚡"
-                      : "🌐"}
-              </span>
-              <span className="text-sm text-gray-400 dark:text-gray-500">
-                {project.category}
-              </span>
-            </div>
-          </div>
+        <div className="flex flex-wrap gap-4 mb-6">
+          {project.liveUrl !== "#" && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full
+                bg-green-500 text-white hover:bg-green-600 transition-colors font-medium text-sm"
+            >
+              <FiExternalLink size={18} />
+              Visit Website
+            </a>
+          )}
+          {project.githubUrl !== "#" && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full
+                bg-gray-900 dark:bg-white text-white dark:text-gray-900
+                hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors font-medium text-sm"
+            >
+              <FiGithub size={18} />
+              View on GitHub
+            </a>
+          )}
         </div>
+      </AnimatedSection>
+
+      {/* Project Image Gallery */}
+      <AnimatedSection delay={0.15}>
+        {/* Main Image */}
+        <div className="rounded-xl overflow-hidden bg-gradient-to-br from-green-500/10 to-green-400/5 border border-gray-200 dark:border-white/10">
+          {gallery ? (
+            <img
+              src={gallery[selectedImage]}
+              alt={`${project.title} - ${selectedImage + 1}`}
+              className="w-full object-contain transition-all duration-300"
+            />
+          ) : project.image.startsWith("http") ? (
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center">
+                <span className="text-6xl block mb-3">
+                  {project.category === "Mobile App"
+                    ? "📱"
+                    : project.category === "Desktop App"
+                      ? "🖥️"
+                      : project.category === "API"
+                        ? "⚡"
+                        : "🌐"}
+                </span>
+                <span className="text-sm text-gray-400 dark:text-gray-500">
+                  {project.category}
+                </span>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Thumbnails */}
+        {gallery && (
+          <div className="flex overflow-x-auto gap-3 mt-3 pb-2 scrollbar-hide">
+            {gallery.map((img, i) => (
+              <button
+                key={i}
+                onClick={() => setSelectedImage(i)}
+                className={`shrink-0 w-24 h-16 sm:w-28 sm:h-18 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+                  selectedImage === i
+                    ? "border-green-500 shadow-lg shadow-green-500/20"
+                    : "border-gray-200 dark:border-white/10 opacity-60 hover:opacity-100"
+                }`}
+              >
+                <img
+                  src={img}
+                  alt={`${project.title} - ${i + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </button>
+            ))}
+          </div>
+        )}
+        <div className="mb-10" />
       </AnimatedSection>
 
       {/* Long Description */}
@@ -148,36 +222,6 @@ export default function ProjectDetail({ project }: { project: Project }) {
         </div>
       </AnimatedSection>
 
-      {/* Action Buttons */}
-      <AnimatedSection delay={0.45}>
-        <div className="flex flex-wrap gap-4">
-          {project.githubUrl !== "#" && (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full
-                bg-gray-900 dark:bg-white text-white dark:text-gray-900
-                hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors font-medium text-sm"
-            >
-              <FiGithub size={18} />
-              View on GitHub
-            </a>
-          )}
-          {project.liveUrl !== "#" && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full
-                bg-green-500 text-white hover:bg-green-600 transition-colors font-medium text-sm"
-            >
-              <FiExternalLink size={18} />
-              Live Demo
-            </a>
-          )}
-        </div>
-      </AnimatedSection>
     </div>
   );
 }

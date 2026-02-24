@@ -55,6 +55,7 @@ export interface Project {
   longDescription: string;
   tags: string[];
   image: string;
+  images?: string[];
   liveUrl: string;
   githubUrl: string;
   category: string;
@@ -75,7 +76,15 @@ export const projects: Project[] = [
     longDescription:
       "Luxury In Motion Dubai is a live production website built for a premium car rental company operating in Dubai, UAE. The platform showcases their exotic and luxury vehicle fleet — including Ferrari, Rolls-Royce, Lamborghini, Mercedes, and 20+ other brands — with an intuitive browsing experience. Visitors can filter vehicles by category (luxury, sports, SUV, sedan, convertible, economy) or by brand, view detailed pricing for daily, weekly, and monthly rentals, and book instantly online. The site highlights key services including door-to-door delivery, chauffeur services, airport transfers, and comprehensive insurance coverage, with secure payment options including Visa, Mastercard, Google Pay, and cryptocurrency.",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    image: "/projects/luxury-in-motion.png",
+    image: "https://i.ibb.co/HfPLGMjp/Screenshot-2026-02-24-131340.png",
+    images: [
+      "https://i.ibb.co/HfPLGMjp/Screenshot-2026-02-24-131340.png",
+      "https://i.ibb.co/hR4qXqbq/Screenshot-2026-02-24-131942.png",
+      "https://i.ibb.co/20dk8Dkc/Screenshot-2026-02-24-132001.png",
+      "https://i.ibb.co/gnJ0YjZ/Screenshot-2026-02-24-132035.png",
+      "https://i.ibb.co/0p2dsB92/Screenshot-2026-02-24-132110.png",
+      "https://i.ibb.co/TBgrnYhL/Screenshot-2026-02-24-132138.png",
+    ],
     liveUrl: "https://www.luxuryinmotiondubai.com/",
     githubUrl: "#",
     category: "Web App",
@@ -106,7 +115,14 @@ export const projects: Project[] = [
     longDescription:
       "Worker Activity Monitor is a production-grade desktop application built for workforce management. It provides real-time, multi-dimensional productivity analysis by combining physical input tracking, application usage analytics, AI-powered attention detection, and intelligent content classification. The system uses a dual-process architecture (Flutter + Python) with a JSON streaming protocol, where the Python sidecar runs MediaPipe Face Mesh locally for gaze detection and head pose estimation — all with zero cloud dependency. A dual-timer system provides per-second polling for real-time UI updates alongside per-minute aggregation for efficient database writes.",
     tags: ["Flutter", "Dart", "Python", "MediaPipe", "Win32 FFI", "SQLite"],
-    image: "/projects/worker-monitor.png",
+    image: "https://i.ibb.co/PZs0kMcF/Screenshot-2026-02-24-132858.png",
+    images: [
+      "https://i.ibb.co/PZs0kMcF/Screenshot-2026-02-24-132858.png",
+      "https://i.ibb.co/N2Jwc2vk/Screenshot-2026-02-24-133015.png",
+      "https://i.ibb.co/HTvxrjzC/Screenshot-2026-02-24-133030.png",
+      "https://i.ibb.co/d4wgchgW/Screenshot-2026-02-24-133059.png",
+      "https://i.ibb.co/wFybvdd0/Screenshot-2026-02-24-133145.png",
+    ],
     liveUrl: "#",
     githubUrl: "#",
     category: "Desktop App",

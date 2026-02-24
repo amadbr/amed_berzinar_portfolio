@@ -70,25 +70,32 @@ export default function Projects() {
                   hover:shadow-xl hover:shadow-green-500/10
                   transition-all duration-300"
               >
-                {/* Project Image Placeholder */}
+                {/* Project Image */}
                 <div className="relative h-48 bg-gradient-to-br from-green-500/10 to-green-400/5 overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <span className="text-4xl block mb-2">
-                        {project.category === "Mobile App"
-                          ? "📱"
-                          : project.category === "Desktop App"
-                            ? "🖥️"
-                            : project.category === "API"
-                              ? "⚡"
-                              : "🌐"}
-                      </span>
-                      <span className="text-xs text-gray-400 dark:text-gray-500">
-                        {project.category}
-                      </span>
+                  {project.image.startsWith("http") ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center">
+                        <span className="text-4xl block mb-2">
+                          {project.category === "Mobile App"
+                            ? "📱"
+                            : project.category === "Desktop App"
+                              ? "🖥️"
+                              : project.category === "API"
+                                ? "⚡"
+                                : "🌐"}
+                        </span>
+                        <span className="text-xs text-gray-400 dark:text-gray-500">
+                          {project.category}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-
+                  )}
                 </div>
 
                 {/* Project Info */}
