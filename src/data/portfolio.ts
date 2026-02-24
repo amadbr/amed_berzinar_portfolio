@@ -30,13 +30,13 @@ I specialize in building modern web applications using React, Next.js, and Node.
 };
 
 export const skills = [
+  { name: "Flutter", icon: SiFlutter, category: "Mobile" },
+  { name: "Dart", icon: SiDart, category: "Mobile" },
   { name: "React", icon: FaReact, category: "Frontend" },
   { name: "Next.js", icon: SiNextdotjs, category: "Frontend" },
   { name: "TypeScript", icon: SiTypescript, category: "Frontend" },
   { name: "JavaScript", icon: SiJavascript, category: "Frontend" },
   { name: "Tailwind CSS", icon: SiTailwindcss, category: "Frontend" },
-  { name: "Flutter", icon: SiFlutter, category: "Mobile" },
-  { name: "Dart", icon: SiDart, category: "Mobile" },
   { name: "Node.js", icon: FaNodeJs, category: "Backend" },
   { name: "Express.js", icon: SiExpress, category: "Backend" },
   { name: "MongoDB", icon: SiMongodb, category: "Backend" },

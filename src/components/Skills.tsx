@@ -28,12 +28,12 @@ export default function Skills() {
 
         {/* Category Filter */}
         <AnimatedSection delay={0.1}>
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
+          <div className="flex overflow-x-auto gap-2 mb-12 pb-2 justify-start sm:justify-center scrollbar-hide">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`shrink-0 px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   active === cat
                     ? "bg-green-500 text-white shadow-lg shadow-green-500/25"
                     : "bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-white/10"

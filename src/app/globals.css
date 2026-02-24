@@ -30,6 +30,15 @@ html {
   background: #22c55e80;
 }
 
+/* Hide scrollbar for horizontal scroll containers */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Selection */
 ::selection {
   background: #22c55e30;
