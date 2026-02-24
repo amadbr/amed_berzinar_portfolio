@@ -56,6 +56,7 @@ export interface Project {
   tags: string[];
   image: string;
   images?: string[];
+  imageGroups?: { label: string; images: string[] }[];
   liveUrl: string;
   githubUrl: string;
   category: string;
@@ -154,7 +155,31 @@ export const projects: Project[] = [
     longDescription:
       "A production-ready Point of Sale system designed for retail businesses, built as a cross-platform desktop application. The system supports multi-user environments with three distinct roles (Admin, Cashier, Seller) and implements a multi-tenant architecture where sellers can manage multiple client businesses, each with independent configurations, currencies, and feature access. Features include a full POS interface with barcode scanning, shift management with cash reconciliation, real-time analytics dashboard, inventory management with bulk import/export, a customer loyalty system with tier progression, and a printing system supporting ESC/POS thermal receipts, PDF generation, and a visual drag-and-drop barcode label layout editor.",
     tags: ["Flutter", "Dart", "SQLite", "ESC/POS", "PDF", "fl_chart"],
-    image: "/projects/pos.png",
+    image: "https://i.ibb.co/1GZ9Vktg/Screenshot-2026-02-24-133905.png",
+    imageGroups: [
+      {
+        label: "Admin Panel",
+        images: [
+          "https://i.ibb.co/1GZ9Vktg/Screenshot-2026-02-24-133905.png",
+          "https://i.ibb.co/0R3GGs6x/Screenshot-2026-02-24-133920.png",
+          "https://i.ibb.co/BVRHYfWJ/Screenshot-2026-02-24-133929.png",
+          "https://i.ibb.co/WpW4RSXT/Screenshot-2026-02-24-133957.png",
+          "https://i.ibb.co/LD18z3G4/Screenshot-2026-02-24-134007.png",
+          "https://i.ibb.co/BHWwRLYD/Screenshot-2026-02-24-134020.png",
+          "https://i.ibb.co/4n64jXdK/Screenshot-2026-02-24-134032.png",
+          "https://i.ibb.co/GvZpxNtr/Screenshot-2026-02-24-134042.png",
+        ],
+      },
+      {
+        label: "Cashier",
+        images: [
+          "https://i.ibb.co/YFQRWnhc/Screenshot-2026-02-24-134302.png",
+          "https://i.ibb.co/MDqDXG7q/Screenshot-2026-02-24-134319.png",
+          "https://i.ibb.co/B2pbxLS2/Screenshot-2026-02-24-134337.png",
+          "https://i.ibb.co/Kcd4j73M/Screenshot-2026-02-24-134356.png",
+        ],
+      },
+    ],
     liveUrl: "#",
     githubUrl: "#",
     category: "Desktop App",
