@@ -147,7 +147,7 @@ const projects = [
     name: "Luxury In Motion Dubai",
     meta: "Production Client Website  |  Next.js, React, TypeScript, Tailwind CSS, Framer Motion",
     bullets: [
-      "Delivered a premium car rental website for a Dubai-based luxury vehicle company \u2014 designed, developed, and deployed within 2 weeks",
+      "Delivered a premium car rental website for a Dubai-based luxury vehicle company \u2014 designed, developed, and deployed over 3 - 4 months",
       "Built fleet showcase with 20+ luxury brand filtering, online booking system, SEO-optimized SSG, and mobile-first responsive design",
       "Integrated secure payment options (Visa, Mastercard, Google Pay, crypto) and Trustpilot testimonials; live at luxuryinmotiondubai.com",
     ],

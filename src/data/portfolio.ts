@@ -105,7 +105,7 @@ export const projects: Project[] = [
     challenges:
       "Building a visually rich car showcase that loads fast despite featuring high-resolution vehicle imagery required careful image optimization and lazy loading strategies. Ensuring the booking flow is intuitive on mobile while displaying detailed vehicle specifications demanded a responsive layout that adapts content hierarchy across breakpoints. SEO was critical for a Dubai-based rental business competing in a saturated market — addressed through static generation, semantic HTML, dynamic metadata per vehicle page, and structured content organization.",
     role: "Full Stack Developer",
-    duration: "2 weeks",
+    duration: "3 - 4 months",
     status: "Completed",
   },
   {
