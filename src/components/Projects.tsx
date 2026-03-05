@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
 import { projects } from "@/data/portfolio";
 
@@ -73,10 +74,12 @@ export default function Projects() {
                 {/* Project Image */}
                 <div className="relative h-48 bg-gradient-to-br from-green-500/10 to-green-400/5 overflow-hidden">
                   {project.image.startsWith("http") ? (
-                    <img
+                    <Image
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      fill
+                      unoptimized
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center">

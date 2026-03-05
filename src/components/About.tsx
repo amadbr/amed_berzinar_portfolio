@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
 import { personalInfo } from "@/data/portfolio";
 import { FiDownload } from "react-icons/fi";
@@ -27,10 +28,11 @@ export default function About() {
 
               {/* Image */}
               <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-green-400/20">
-                <img
+                <Image
                   src="/images/my_image.png"
                   alt={personalInfo.name}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </div>

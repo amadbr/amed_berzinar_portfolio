@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiArrowLeft, FiExternalLink, FiGithub } from "react-icons/fi";
 import AnimatedSection from "./AnimatedSection";
@@ -109,16 +110,21 @@ export default function ProjectDetail({ project }: { project: Project }) {
         {/* Main Image */}
         <div className="rounded-xl overflow-hidden bg-gradient-to-br from-green-500/10 to-green-400/5 border border-gray-200 dark:border-white/10">
           {gallery ? (
-            <img
+            <Image
               src={gallery[selectedImage]}
               alt={`${project.title} - ${selectedImage + 1}`}
+              width={900}
+              height={500}
+              unoptimized
               className="w-full object-contain transition-all duration-300"
             />
           ) : project.image.startsWith("http") ? (
-            <img
+            <Image
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover"
+              fill
+              unoptimized
+              className="object-cover"
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
@@ -147,16 +153,18 @@ export default function ProjectDetail({ project }: { project: Project }) {
               <button
                 key={i}
                 onClick={() => setSelectedImage(i)}
-                className={`shrink-0 w-24 h-16 sm:w-28 sm:h-18 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+                className={`relative shrink-0 w-24 h-16 sm:w-28 sm:h-18 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
                   selectedImage === i
                     ? "border-green-500 shadow-lg shadow-green-500/20"
                     : "border-gray-200 dark:border-white/10 opacity-60 hover:opacity-100"
                 }`}
               >
-                <img
+                <Image
                   src={img}
                   alt={`${project.title} - ${i + 1}`}
-                  className="w-full h-full object-cover"
+                  fill
+                  unoptimized
+                  className="object-cover"
                 />
               </button>
             ))}

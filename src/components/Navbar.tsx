@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import ThemeToggle from "./ThemeToggle";
 import { navLinks } from "@/data/portfolio";
@@ -11,14 +12,10 @@ import { navLinks } from "@/data/portfolio";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(() => () => {}, () => true, () => false);
   const pathname = usePathname();
   const isHome = pathname === "/";
   const { theme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -66,9 +63,11 @@ export default function Navbar() {
               href={getHref("#home")}
               className="block hover:opacity-80 transition-opacity"
             >
-              <img
+              <Image
                 src={logoSrc}
                 alt="Amed Berzinar"
+                width={120}
+                height={48}
                 className={`h-10 md:h-12 w-auto ${isOpen ? "md:block hidden" : ""}`}
               />
             </a>
