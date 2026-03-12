@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import { skills } from "@/data/portfolio";
 
-const categories = ["All", "Frontend", "Backend", "Mobile", "Tools"];
+const categories = ["All", "Frontend", "Backend", "Mobile & Desktop", "Tools"];
 
 export default function Skills() {
   const [active, setActive] = useState("All");
@@ -23,7 +23,14 @@ export default function Skills() {
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 dark:text-white mb-4">
             My <span className="text-green-500">Skills</span>
           </h2>
-          <div className="w-20 h-1 bg-green-500 mx-auto rounded-full mb-12" />
+          <div className="w-20 h-1 bg-green-500 mx-auto rounded-full mb-4" />
+          <p className="text-center text-gray-500 dark:text-gray-400 max-w-xl mx-auto mb-12">
+            Technologies I use to build web, desktop, and mobile applications for my clients.
+            {" "}See them in action in my{" "}
+            <a href="#projects" className="text-green-500 hover:text-green-400 underline underline-offset-2 font-medium transition-colors">
+              projects
+            </a>.
+          </p>
         </AnimatedSection>
 
         {/* Category Filter */}

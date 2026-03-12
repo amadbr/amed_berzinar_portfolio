@@ -1,6 +1,7 @@
 "use client";
 
 import { FiGithub, FiLinkedin, FiInstagram, FiMail, FiArrowUpRight } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 import AnimatedSection from "./AnimatedSection";
 import { personalInfo } from "@/data/portfolio";
 
@@ -12,6 +13,12 @@ const contactLinks = [
     href: `mailto:${personalInfo.email}`,
   },
   {
+    icon: FaWhatsapp,
+    label: "WhatsApp",
+    value: "+964 0751 840 5161",
+    href: "https://wa.me/9647518405161",
+  },
+  {
     icon: FiGithub,
     label: "GitHub",
     value: "github.com/amadbr",
@@ -20,7 +27,7 @@ const contactLinks = [
   {
     icon: FiLinkedin,
     label: "LinkedIn",
-    value: "linkedin.com/in/amed-berznar",
+    value: "linkedin.com/in/amed-berzinar",
     href: personalInfo.socials.linkedin,
   },
   {
@@ -44,13 +51,12 @@ export default function Contact() {
           </h2>
           <div className="w-20 h-1 bg-green-500 mx-auto rounded-full mb-4" />
           <p className="text-center text-gray-500 dark:text-gray-400 max-w-xl mx-auto mb-12">
-            I&apos;m always open to new opportunities and interesting projects. Feel free
-            to reach out through any of the platforms below.
+            Looking for a freelance developer? I&apos;m available for web, desktop, and mobile projects worldwide. Let&apos;s talk.
           </p>
         </AnimatedSection>
 
-        <div className="max-w-2xl mx-auto">
-          <div className="grid sm:grid-cols-2 gap-4">
+        <div className="max-w-3xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {contactLinks.map((link, i) => {
               const Icon = link.icon;
               return (

@@ -5,6 +5,34 @@ import AnimatedSection from "./AnimatedSection";
 import { personalInfo } from "@/data/portfolio";
 import { FiDownload } from "react-icons/fi";
 
+function renderParagraph(text: string) {
+  const keyword = "Luxury In Motion Dubai";
+  const index = text.indexOf(keyword);
+  if (index === -1) return text;
+
+  const before = text.slice(0, index);
+  const after = text.slice(index + keyword.length);
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new CustomEvent("highlight-project", { detail: "luxury-in-motion-dubai" }));
+  };
+
+  return (
+    <>
+      {before}
+      <a
+        href="#projects"
+        onClick={handleClick}
+        className="text-green-500 hover:text-green-400 underline underline-offset-2 font-medium transition-colors"
+      >
+        {keyword}
+      </a>
+      {after}
+    </>
+  );
+}
+
 export default function About() {
   return (
     <section id="about" className="py-20 sm:py-28">
@@ -42,7 +70,7 @@ export default function About() {
           <AnimatedSection delay={0.2}>
             <div className="space-y-5">
               <h3 className="font-display text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">
-                Full Stack Developer based in passion for building
+                From top CS graduate to international freelancer
               </h3>
 
               {personalInfo.about.split("\n\n").map((paragraph, i) => (
@@ -50,7 +78,7 @@ export default function About() {
                   key={i}
                   className="text-gray-600 dark:text-gray-400 leading-relaxed"
                 >
-                  {paragraph}
+                  {renderParagraph(paragraph)}
                 </p>
               ))}
 
@@ -59,7 +87,7 @@ export default function About() {
                 {[
                   { value: "4+", label: "Years Exp." },
                   { value: "10+", label: "Projects" },
-                  { value: "10+", label: "Technologies" },
+                  { value: "3", label: "Countries" },
                 ].map((stat) => (
                   <div
                     key={stat.label}

@@ -1,6 +1,7 @@
 "use client";
 
 import { FiGithub, FiLinkedin, FiInstagram, FiMail } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 import { personalInfo } from "@/data/portfolio";
 
 export default function Footer() {
@@ -19,6 +20,7 @@ export default function Footer() {
               { icon: FiGithub, href: personalInfo.socials.github },
               { icon: FiLinkedin, href: personalInfo.socials.linkedin },
               { icon: FiInstagram, href: personalInfo.socials.instagram },
+              { icon: FaWhatsapp, href: "https://wa.me/9647518405161" },
               { icon: FiMail, href: `mailto:${personalInfo.email}` },
             ].map(({ icon: Icon, href }) => (
               <a

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,6 +11,29 @@ const categories = ["All", "Web App", "Desktop App"];
 
 export default function Projects() {
   const [active, setActive] = useState("All");
+
+  const highlightCard = useCallback((slug: string) => {
+    setActive("All");
+    setTimeout(() => {
+      const card = document.getElementById(`project-${slug}`);
+      if (card) {
+        card.scrollIntoView({ behavior: "smooth", block: "center" });
+        card.classList.add("ring-2", "ring-green-500", "ring-offset-2", "dark:ring-offset-gray-900", "rounded-xl");
+        setTimeout(() => {
+          card.classList.remove("ring-2", "ring-green-500", "ring-offset-2", "dark:ring-offset-gray-900", "rounded-xl");
+        }, 2000);
+      }
+    }, 100);
+  }, []);
+
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const slug = (e as CustomEvent).detail;
+      highlightCard(slug);
+    };
+    window.addEventListener("highlight-project", handler);
+    return () => window.removeEventListener("highlight-project", handler);
+  }, [highlightCard]);
 
   const filtered =
     active === "All"
@@ -26,8 +49,7 @@ export default function Projects() {
           </h2>
           <div className="w-20 h-1 bg-green-500 mx-auto rounded-full mb-4" />
           <p className="text-center text-gray-500 dark:text-gray-400 max-w-xl mx-auto mb-12">
-            Here are some of my recent projects showcasing my skills across
-            different platforms and technologies.
+            Real projects for real clients — from live production websites to complex desktop applications.
           </p>
         </AnimatedSection>
 
@@ -62,6 +84,7 @@ export default function Projects() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
+              id={`project-${project.slug}`}
             >
               <Link
                 href={`/projects/${project.slug}`}

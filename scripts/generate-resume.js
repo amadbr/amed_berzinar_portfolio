@@ -48,16 +48,24 @@ function bullet(text, y, indent) {
 
 doc.font("Helvetica-Bold").fontSize(24).fillColor(BLACK).text("Amed Berzinar", L, 50);
 
-doc.font("Helvetica").fontSize(12).fillColor(NAVY).text("Full Stack & Flutter Developer", L, 80);
+doc.font("Helvetica").fontSize(12).fillColor(NAVY).text("Full Stack Developer  |  Iraq  |  Available Worldwide", L, 80);
 
 doc.moveDown(0.5);
 let y = doc.y + 4;
 
-// Contact line
+// Contact line 1
 doc.font("Helvetica").fontSize(9).fillColor(GRAY);
 doc.text("amadbarznar123@gmail.com", L, y, { continued: true });
 doc.text("    |    ", { continued: true });
-doc.text("+964 0751 840 5161", { continued: false });
+doc.text("+964 0751 840 5161 (WhatsApp)", { continued: false });
+y = doc.y + 3;
+
+// Contact line 2
+doc.text("amedberzinar.com", L, y, { continued: true });
+doc.text("    |    ", { continued: true });
+doc.text("linkedin.com/in/amed-berzinar", { continued: true });
+doc.text("    |    ", { continued: true });
+doc.text("github.com/amadbr", { continued: false });
 
 y = doc.y + 12;
 doc.moveTo(L, y).lineTo(L + W, y).strokeColor(NAVY).lineWidth(1.2).stroke();
@@ -70,10 +78,10 @@ y += 16;
 y = sectionHeading("Summary", y);
 
 doc.font("Helvetica").fontSize(9.5).fillColor(DARK).text(
-  "Full Stack Developer with 4+ years of experience building production-grade web, desktop, and mobile applications. " +
-  "Specialized in Flutter/Dart for cross-platform mobile and desktop applications with system-level integration (Win32 FFI, COM automation, ESC/POS protocols) " +
-  "and AI/ML capabilities (MediaPipe). Equally proficient in React, Next.js, TypeScript, and Node.js ecosystems. " +
-  "Proven ability to architect multi-tenant platforms, integrate hardware peripherals, and deliver client projects under tight deadlines.",
+  "I'm a Full Stack Developer from Iraq with a CS degree (top 10 in my class) and 4+ years of coding experience. " +
+  "I freelance for international clients in Dubai and Scandinavia \u2014 my first client came through a referral because of the quality of my work. " +
+  "I also build and sell my own products: my POS system already has a paying customer using it daily. " +
+  "I work with React, Next.js, Node.js, and Flutter. I deliver fast and I write clean code.",
   L, y, { width: W, lineGap: 3 }
 );
 
@@ -86,11 +94,11 @@ y = doc.y + 16;
 y = sectionHeading("Technical Skills", y);
 
 const skills = [
-  ["Flutter & Mobile/Desktop", "Flutter, Dart, Win32 FFI, COM Automation, Provider, SQLite, ESC/POS, fl_chart, PDF Generation"],
-  ["Frontend", "React, Next.js, TypeScript, JavaScript, Tailwind CSS, Framer Motion, HTML5, CSS3"],
+  ["Frontend", "React, Next.js, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, Framer Motion, Shadcn/ui"],
   ["Backend & Database", "Node.js, Express.js, PostgreSQL, MongoDB, Prisma ORM, Firebase, NextAuth.js, REST APIs"],
-  ["AI / ML", "Python, MediaPipe Face Mesh, Eye Tracking (EAR), 3D Head Pose Estimation, Iris Gaze Detection"],
-  ["Tools & DevOps", "Git, Docker, Figma, Netlify, Zod, ESC/POS Thermal Printers, Barcode Scanners"],
+  ["Mobile & Desktop", "Flutter, Dart, SQLite, Win32 FFI, COM Automation, ESC/POS thermal printing"],
+  ["AI / ML", "Python, MediaPipe Face Mesh, real-time eye tracking, head pose estimation"],
+  ["Tools & Design", "Git, Docker, Vercel, Netlify, Figma, UI/UX Design"],
 ];
 
 skills.forEach(([label, items]) => {
@@ -106,50 +114,69 @@ y += 10;
 // PROJECTS
 // ═══════════════════════════════════════════════════════
 
-y = sectionHeading("Projects", y);
+// ═══════════════════════════════════════════════════════
+// FREELANCE EXPERIENCE
+// ═══════════════════════════════════════════════════════
+
+y = sectionHeading("Freelance Experience", y);
+
+// Luxury In Motion Dubai
+doc.font("Helvetica-Bold").fontSize(10.5).fillColor(BLACK).text("Luxury In Motion Dubai", L, y);
+y = doc.y + 3;
+doc.font("Helvetica-Oblique").fontSize(9).fillColor(GRAY).text("Freelance Developer (Referral)  |  Next.js, React, TypeScript, Tailwind CSS  |  3\u20134 months  |  Completed", L, y, { width: W });
+y = doc.y + 6;
+y = bullet("Got this client through a referral from my former manager. Designed the UI/UX in Figma and built the entire site myself from scratch", y);
+y = bullet("Car rental showcase with 20+ luxury brand filtering, daily/weekly/monthly pricing, and booking via WhatsApp and call", y);
+y = bullet("SEO-optimized static generation so the site ranks well in Dubai's competitive rental market. Live at luxuryinmotiondubai.com", y);
+y = bullet("Client told my former manager: \"very honest and very good work, we are very happy with this guy\"", y);
+
+y += 8;
+
+// Scandinavia
+doc.font("Helvetica-Bold").fontSize(10.5).fillColor(BLACK).text("Two Freelance Clients in Scandinavia", L, y);
+y = doc.y + 3;
+doc.font("Helvetica-Oblique").fontSize(9).fillColor(GRAY).text("Freelance Developer  |  Norway & Sweden  |  Ongoing (under NDA)", L, y, { width: W });
+y = doc.y + 6;
+y = bullet("Currently working with two clients in Norway and Sweden. Details are confidential until the projects are deployed", y);
+
+y += 12;
+
+// ═══════════════════════════════════════════════════════
+// PRODUCTS & PROJECTS
+// ═══════════════════════════════════════════════════════
+
+y = sectionHeading("Products & Projects", y);
 
 const projects = [
   {
     name: "Point of Sale (POS) System",
-    meta: "Cross-Platform Desktop App  |  Flutter, Dart, SQLite, ESC/POS, fl_chart",
+    meta: "In Production (1 paying customer)  |  Flutter, Dart, SQLite, ESC/POS  |  Core built in 20 days",
     bullets: [
-      "Architected a cross-platform POS desktop application (Windows, macOS, Linux) with multi-tenant architecture supporting multiple client businesses per seller account",
-      "Engineered an 18-version incremental SQLite migration system with backward compatibility and zero data loss across updates",
-      "Built real-time admin dashboard with interactive sales trends, hourly performance, payment breakdowns, and top product charts",
-      "Implemented role-based access control (Admin, Cashier, Seller) with fine-grained dot-notation sub-permissions and UI guard widgets",
-      "Integrated low-level ESC/POS thermal receipt printing with binary protocol work and bitmap conversion; built visual drag-and-drop barcode label editor",
-      "Developed barcode scanner auto-detection (50ms timing threshold), customer loyalty system with tier progression, and bulk import/export (CSV, Excel)",
+      "A client asked me to build this, and after using it I turned it into a product I now sell. My first customer is actively using it in their store",
+      "I fixed problems I saw in other POS systems: refunding is too complicated, you can't hold a cart when a customer steps away, and managing multiple stores is a pain",
+      "18-version database migration system that never loses data \u2014 real businesses depend on it, so I can't afford bugs here",
+      "Barcode scanner detection using a 50ms timing trick: scanners send characters in fast bursts, humans type slowly. That's how I tell them apart",
+      "Currently building local network sync: the admin laptop runs as a server, cashier devices connect over WiFi, and if WiFi drops they work offline and resync later",
     ],
   },
   {
     name: "Worker Activity Monitor",
-    meta: "AI-Powered Desktop App  |  Flutter, Dart, Python, MediaPipe, Win32 FFI, SQLite",
+    meta: "AI Desktop App  |  Flutter, Dart, Python, MediaPipe, Win32 FFI, SQLite  |  Core built in 1 week",
     bullets: [
-      "Built a dual-process desktop app (Flutter UI + Python ML sidecar via JSON streaming) for AI-powered employee productivity tracking with zero cloud dependency",
-      "Integrated MediaPipe FaceLandmarker (468-point face mesh) for real-time Eye Aspect Ratio calculation, 3D head pose estimation, and iris gaze tracking at ~5 FPS",
-      "Implemented system-level mouse/keyboard tracking through Win32 FFI with per-second granularity and per-minute aggregate storage",
-      "Developed combined attention state machine (Active, Watching, Suspicious, Idle) fusing physical activity data with eye-tracking signals",
-      "Engineered browser URL tracking via COM automation for 6 browsers and smart video detection covering 30+ streaming platforms",
-      "Built shift lifecycle management with crash-resilient resume and professional PDF report generation with activity timelines",
+      "I built this because at a previous company I saw workers doing nothing while managers had no way to know. I wanted to fix that",
+      "Flutter handles the UI, Python runs MediaPipe Face Mesh for eye-tracking and head pose detection at ~5 FPS. They talk through JSON streaming",
+      "Tracks mouse, keyboard, active apps, and browser URLs across 6 browsers. Generates daily PDF reports. Everything runs offline",
+      "Four attention states (Active, Watching, Suspicious, Idle) combining physical activity with what the camera sees",
     ],
   },
   {
     name: "TicketFlow \u2014 Queue & Appointment SaaS",
-    meta: "Multi-Tenant SaaS Platform  |  Next.js, TypeScript, PostgreSQL, Prisma, NextAuth.js",
+    meta: "Preparing for Launch  |  Next.js, TypeScript, PostgreSQL, Prisma, NextAuth.js",
     bullets: [
-      "Designed a multi-tenant SaaS platform (Organization > Branch > Counter) with a 452-line Prisma schema and 15+ relational models",
-      "Developed 65+ secured REST API endpoints with Zod validation, JWT authentication, and middleware for auth, license gating, and role verification",
-      "Implemented 5 user roles with granular permissions, drag-and-drop homepage builder (19+ section types), and real-time queue management with sound notifications",
-      "Integrated RSA-2048 license management with domain binding and QR-based camera check-in for events",
-    ],
-  },
-  {
-    name: "Luxury In Motion Dubai",
-    meta: "Production Client Website  |  Next.js, React, TypeScript, Tailwind CSS, Framer Motion",
-    bullets: [
-      "Delivered a premium car rental website for a Dubai-based luxury vehicle company \u2014 designed, developed, and deployed over 3 - 4 months",
-      "Built fleet showcase with 20+ luxury brand filtering, online booking system, SEO-optimized SSG, and mobile-first responsive design",
-      "Integrated secure payment options (Visa, Mastercard, Google Pay, crypto) and Trustpilot testimonials; live at luxuryinmotiondubai.com",
+      "I saw the same problem in hospitals, clinics, and government offices: people waiting in disorganized queues. I built a system to fix that",
+      "Multi-tenant setup (Organization > Branch > Counter) with 65+ API endpoints, 5 user roles, and a 452-line Prisma schema",
+      "Built a drag-and-drop homepage builder with 19+ section types so admins can update their customer page themselves, no developer needed",
+      "QR-based appointment confirmation and real-time queue display boards for branch waiting areas",
     ],
   },
 ];
@@ -157,20 +184,16 @@ const projects = [
 projects.forEach((proj, i) => {
   y = checkPage(y, 70);
 
-  // Project name
   doc.font("Helvetica-Bold").fontSize(10.5).fillColor(BLACK).text(proj.name, L, y);
   y = doc.y + 3;
 
-  // Meta line
   doc.font("Helvetica-Oblique").fontSize(9).fillColor(GRAY).text(proj.meta, L, y, { width: W });
   y = doc.y + 6;
 
-  // Bullets
   proj.bullets.forEach((b) => {
     y = bullet(b, y);
   });
 
-  // Separator between projects (except last)
   if (i < projects.length - 1) {
     y += 6;
   }
@@ -184,13 +207,44 @@ y += 12;
 
 y = sectionHeading("Education", y);
 
-doc.font("Helvetica-Bold").fontSize(10).fillColor(BLACK).text("Self-Taught Developer", L, y);
-y = doc.y + 5;
-doc.font("Helvetica").fontSize(9.5).fillColor(DARK).text(
-  "Continuous learning through production project development, official framework documentation, and structured online courses. " +
-  "Deep expertise built by shipping real-world applications across web, desktop, and AI/ML domains.",
-  L, y, { width: W, lineGap: 2.5 }
-);
+doc.font("Helvetica-Bold").fontSize(10).fillColor(BLACK).text("Bachelor of Science in Computer Science", L, y);
+y = doc.y + 3;
+doc.font("Helvetica-Oblique").fontSize(9).fillColor(GRAY).text("Graduated 2025  |  Top 10 in class  |  Ranked 1st in coding among year group", L, y);
+y = doc.y + 6;
+y = bullet("Got 10/10 on every programming course. Spent every summer break teaching myself new technologies outside the university curriculum", y);
+y = bullet("Also completed The Complete Web Development Bootcamp and Flutter Bootcamp with Dart on Udemy", y);
+
+y += 12;
+
+// ═══════════════════════════════════════════════════════
+// LANGUAGES
+// ═══════════════════════════════════════════════════════
+
+y = sectionHeading("Languages", y);
+
+doc.font("Helvetica").fontSize(9.5).fillColor(DARK);
+doc.font("Helvetica-Bold").text("Kurdish", L, y, { continued: true });
+doc.font("Helvetica").text("  —  Native", { continued: false });
+y = doc.y + 4;
+doc.font("Helvetica-Bold").text("English", L, y, { continued: true });
+doc.font("Helvetica").text("  —  Professional working proficiency", { continued: false });
+y = doc.y + 4;
+doc.font("Helvetica-Bold").text("Arabic", L, y, { continued: true });
+doc.font("Helvetica").text("  —  Reading and listening comprehension", { continued: false });
+
+y = doc.y + 12;
+
+// ═══════════════════════════════════════════════════════
+// HOW I WORK
+// ═══════════════════════════════════════════════════════
+
+y = sectionHeading("How I Work", y);
+
+y = bullet("I plan before I code. I think through the architecture and break tasks down before writing a single line", y);
+y = bullet("I deliver fast — I built a full POS system core in 20 days and an AI desktop app in 1 week", y);
+y = bullet("I use AI as a tool to write cleaner code, but I understand every line I ship. No copy-pasting", y);
+y = bullet("I design my own UIs — I don't need a separate designer to deliver a polished product", y);
+y = bullet("I communicate clearly and work well across timezones. My clients are in Dubai, Norway, and Sweden", y);
 
 // ═══════════════════════════════════════════════════════
 

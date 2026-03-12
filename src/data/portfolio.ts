@@ -1,4 +1,4 @@
-import { FaReact, FaNodeJs, FaGitAlt, FaDocker, FaFigma } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaGitAlt, FaDocker, FaFigma, FaHtml5, FaCss3Alt, FaPython } from "react-icons/fa";
 import {
   SiNextdotjs,
   SiTypescript,
@@ -11,40 +11,47 @@ import {
   SiFirebase,
   SiPrisma,
   SiExpress,
+  SiVercel,
 } from "react-icons/si";
 
 export const personalInfo = {
   name: "Amed Berzinar",
-  title: "Full Stack Developer",
+  title: "Full Stack Developer | Freelancer",
   tagline:
-    "I build modern, performant web & mobile applications with clean code and great user experiences.",
-  about: `I'm a passionate Full Stack Developer who loves turning ideas into reality through code. With expertise spanning frontend, backend, and mobile development, I craft end-to-end solutions that are both beautiful and functional.
+    "Full Stack Developer from Iraq, building web & mobile applications for clients across the Middle East and Scandinavia.",
+  about: `I'm a 23-year-old Full Stack Developer from Iraq with a Computer Science degree — graduated in the top 10 of my class, and ranked first in coding among my year. While university taught me the fundamentals, I spent every summer break learning on my own, pushing beyond the curriculum to master real-world development.
 
-I specialize in building modern web applications using React, Next.js, and Node.js, as well as cross-platform mobile apps with Flutter. I'm always eager to learn new technologies and take on challenging projects.`,
+Today I work as a freelance developer with clients in Dubai and Scandinavia. My first major project, Luxury In Motion Dubai, is live and serving customers. I build with React, Next.js, Node.js, and Flutter — and I'm known for delivering quality work fast. I use AI as a tool to write cleaner code, but every line I ship is something I fully understand.
+
+Currently available for freelance projects worldwide. Let's build something together.`,
   email: "amadbarznar123@gmail.com",
   socials: {
     github: "https://github.com/amadbr",
-    linkedin: "https://www.linkedin.com/in/amed-berznar-486135237",
+    linkedin: "https://www.linkedin.com/in/amed-berzinar/",
     instagram: "https://instagram.com/amed_berzinar",
   },
 };
 
 export const skills = [
-  { name: "Flutter", icon: SiFlutter, category: "Mobile" },
-  { name: "Dart", icon: SiDart, category: "Mobile" },
+  { name: "Flutter", icon: SiFlutter, category: "Mobile & Desktop" },
+  { name: "Dart", icon: SiDart, category: "Mobile & Desktop" },
+  { name: "HTML5", icon: FaHtml5, category: "Frontend" },
+  { name: "CSS3", icon: FaCss3Alt, category: "Frontend" },
+  { name: "JavaScript", icon: SiJavascript, category: "Frontend" },
+  { name: "TypeScript", icon: SiTypescript, category: "Frontend" },
   { name: "React", icon: FaReact, category: "Frontend" },
   { name: "Next.js", icon: SiNextdotjs, category: "Frontend" },
-  { name: "TypeScript", icon: SiTypescript, category: "Frontend" },
-  { name: "JavaScript", icon: SiJavascript, category: "Frontend" },
   { name: "Tailwind CSS", icon: SiTailwindcss, category: "Frontend" },
   { name: "Node.js", icon: FaNodeJs, category: "Backend" },
   { name: "Express.js", icon: SiExpress, category: "Backend" },
+  { name: "Python", icon: FaPython, category: "Backend" },
   { name: "MongoDB", icon: SiMongodb, category: "Backend" },
   { name: "PostgreSQL", icon: SiPostgresql, category: "Backend" },
   { name: "Prisma", icon: SiPrisma, category: "Backend" },
   { name: "Firebase", icon: SiFirebase, category: "Backend" },
   { name: "Git", icon: FaGitAlt, category: "Tools" },
   { name: "Docker", icon: FaDocker, category: "Tools" },
+  { name: "Vercel", icon: SiVercel, category: "Tools" },
   { name: "Figma", icon: FaFigma, category: "Tools" },
 ];
 
@@ -73,9 +80,9 @@ export const projects: Project[] = [
     title: "Luxury In Motion Dubai",
     slug: "luxury-in-motion-dubai",
     description:
-      "A premium car rental website built for a Dubai-based luxury vehicle rental company. Features a branded fleet showcase with category/brand filtering, instant online booking, responsive design with smooth animations, and SEO-optimized static generation.",
+      "A live production website I built for a luxury car rental company in Dubai. Customers can browse 20+ brands, view pricing, and book via WhatsApp or call.",
     longDescription:
-      "Luxury In Motion Dubai is a live production website built for a premium car rental company operating in Dubai, UAE. The platform showcases their exotic and luxury vehicle fleet — including Ferrari, Rolls-Royce, Lamborghini, Mercedes, and 20+ other brands — with an intuitive browsing experience. Visitors can filter vehicles by category (luxury, sports, SUV, sedan, convertible, economy) or by brand, view detailed pricing for daily, weekly, and monthly rentals, and book instantly online. The site highlights key services including door-to-door delivery, chauffeur services, airport transfers, and comprehensive insurance coverage, with secure payment options including Visa, Mastercard, Google Pay, and cryptocurrency.",
+      "A Dubai-based luxury car rental company reached out to me directly through a referral from a former manager who knew the quality of my work. I handled everything from scratch — UI/UX design, frontend development, and deployment. The client needed a website that could showcase their fleet of 20+ luxury brands (Ferrari, Rolls-Royce, Lamborghini, Mercedes, and more), let customers filter by category or brand, see daily/weekly/monthly pricing, and book directly via WhatsApp or phone call. I designed and built the entire site in about 3-4 months, and it's been live in production since. The client was very happy with the result — they told my former manager that I delivered honest, professional work.",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/luxury-1_4tEG9xd_B.png",
     images: [
@@ -90,21 +97,19 @@ export const projects: Project[] = [
     githubUrl: "#",
     category: "Web App",
     features: [
-      "Premium fleet showcase with category and brand filtering across 20+ luxury manufacturers",
-      "Instant online booking system with flexible daily, weekly, and monthly rental options",
-      "Responsive design optimized for all devices with smooth scroll-triggered animations",
-      "SEO-optimized with static site generation for fast page loads and search engine visibility",
-      "Dark/light theme toggle with smooth transitions",
-      "Detailed vehicle pages with pricing, specifications, and availability",
-      "Customer testimonials section with Trustpilot and Google review integration",
-      "Secure payment options supporting Visa, Mastercard, Google Pay, and cryptocurrency",
-      "Mobile-first design with intuitive navigation and 24/7 contact accessibility",
+      "Fleet showcase with filtering by category (luxury, sports, SUV, sedan, convertible, economy) and by brand across 20+ manufacturers",
+      "Booking via WhatsApp and direct call with daily, weekly, and monthly rental pricing displayed",
+      "Multiple payment methods accepted (Visa, Mastercard, Google Pay, cryptocurrency)",
+      "Detailed vehicle pages with specifications, pricing, and availability",
+      "SEO-optimized static generation for fast loads and search engine ranking",
+      "Customer testimonials with Trustpilot and Google review integration",
+      "Fully responsive design with scroll-triggered animations",
     ],
     techDetails:
-      "Built with Next.js 16 App Router and React 19 using a component-based architecture. Tailwind CSS 4 with PostCSS handles responsive styling with utility-first classes and automatic purging for minimal bundle size. Framer Motion powers viewport-triggered animations and staggered reveal effects throughout the site. Static site generation (SSG) with generateStaticParams ensures instant page loads and optimal SEO performance. Theme switching implemented via next-themes with smooth transitions. Font optimization using next/font for consistent typography. Deployed as a static export for production hosting.",
+      "I chose Next.js with static site generation because the site needed to rank well on Google — SEO is everything for a car rental business in Dubai's competitive market. Tailwind CSS let me build a responsive, polished design quickly without fighting custom CSS. Framer Motion handles the scroll-triggered animations that give the site a premium feel matching the luxury brand. The entire site is exported as static HTML, so it loads instantly with no server costs. I designed the UI/UX myself in Figma before writing any code.",
     challenges:
-      "Building a visually rich car showcase that loads fast despite featuring high-resolution vehicle imagery required careful image optimization and lazy loading strategies. Ensuring the booking flow is intuitive on mobile while displaying detailed vehicle specifications demanded a responsive layout that adapts content hierarchy across breakpoints. SEO was critical for a Dubai-based rental business competing in a saturated market — addressed through static generation, semantic HTML, dynamic metadata per vehicle page, and structured content organization.",
-    role: "Full Stack Developer",
+      "The main challenge was making the site feel premium while keeping it fast. High-resolution car images are heavy, so I implemented lazy loading and optimized every image to keep page loads under 2 seconds. The booking flow needed to work just as well on a phone as on desktop — in Dubai, most customers browse on mobile. SEO was critical since the client competes with dozens of other rental companies, so I used static generation with dynamic metadata for every vehicle page to help them rank on Google.",
+    role: "Freelance Developer",
     duration: "3 - 4 months",
     status: "Completed",
   },
@@ -112,9 +117,9 @@ export const projects: Project[] = [
     title: "Worker Activity Monitor",
     slug: "worker-activity-monitor",
     description:
-      "AI-powered employee productivity tracking desktop app with real-time eye tracking via MediaPipe, Win32 FFI system integration, Python sidecar process, mouse/keyboard analytics, smart video detection, and PDF report generation.",
+      "A desktop app that tracks employee productivity using AI eye-tracking, mouse/keyboard analytics, and generates PDF reports. Runs fully offline.",
     longDescription:
-      "Worker Activity Monitor is a production-grade desktop application built for workforce management. It provides real-time, multi-dimensional productivity analysis by combining physical input tracking, application usage analytics, AI-powered attention detection, and intelligent content classification. The system uses a dual-process architecture (Flutter + Python) with a JSON streaming protocol, where the Python sidecar runs MediaPipe Face Mesh locally for gaze detection and head pose estimation — all with zero cloud dependency. A dual-timer system provides per-second polling for real-time UI updates alongside per-minute aggregation for efficient database writes.",
+      "I built this because of a real problem I saw at a company I used to work at — lazy workers who weren't doing their job, and managers who had no way to see what was actually happening. I wanted to give managers a clear picture of their team's productivity so they could make their business successful. The app tracks everything: mouse and keyboard activity, which apps are being used, what websites are open, and even uses AI eye-tracking through the camera to detect if someone is paying attention or not. It runs fully offline with no cloud dependency, and generates daily PDF reports for each worker. I built the whole thing in about one week using Flutter for the UI and Python for the AI eye-tracking side.",
     tags: ["Flutter", "Dart", "Python", "MediaPipe", "Win32 FFI", "SQLite"],
     image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/worker-1_1YCm1AysbY.png",
     images: [
@@ -140,20 +145,20 @@ export const projects: Project[] = [
       "Browser URL tracking via COM automation supporting Chrome, Edge, Firefox, Brave, Opera, and Vivaldi",
     ],
     techDetails:
-      "Built with Flutter Desktop (Windows) using Provider state management, fl_chart for data visualization, and PDF generation for reports. The AI layer runs a Python sidecar using MediaPipe FaceLandmarker with 468-point face mesh for Eye Aspect Ratio calculation, 3D head pose estimation via solvePnP, iris gaze tracking, and distance-adaptive thresholds. System integration uses Win32 API calls via Dart FFI for mouse tracking, keyboard input detection, foreground window identification, and COM Automation for browser URL extraction. The dual-process architecture communicates over a JSON streaming protocol via stdout, enabling graceful degradation if Python is unavailable. SQLite database with 7 progressive schema migrations stores per-second granularity alongside minute aggregates. The app features 9 screens including dashboard with live status, reports with date navigation, app deep-dive, watching timeline, and settings.",
+      "Flutter Desktop handles the UI with Provider for state management, fl_chart for activity visualizations, and PDF generation for daily reports. The AI side runs as a separate Python process using MediaPipe Face Mesh for eye-tracking and head pose estimation — it communicates with Flutter through JSON streaming. I used Win32 FFI to track mouse movement, keyboard input, and detect which app is in the foreground. Browser URL tracking works through COM automation across 6 browsers (Chrome, Edge, Firefox, Brave, Opera, Vivaldi). SQLite stores all data locally with per-second granularity. The app has 9 screens including a live dashboard, report viewer, app usage breakdown, and settings.",
     challenges:
-      "The biggest challenge was implementing reliable AI eye tracking without cloud dependencies. MediaPipe Face Mesh runs at ~5 FPS locally, requiring careful optimization of the Python sidecar and efficient JSON streaming to avoid blocking Flutter's UI thread. Combining physical activity data with eye tracking into a unified attention status required designing a state machine that handles edge cases like face occlusion and camera unavailability gracefully. Browser URL extraction via COM automation needed per-browser handling since each browser exposes accessibility differently. The 7-version database migration system had to preserve per-second data granularity while evolving the schema from basic activity logs to full attention and watching session tracking.",
-    role: "Full Stack Developer",
-    duration: "Ongoing",
+      "The current limitation I'm working on is multi-monitor support. Right now the app uses the laptop camera, so if a worker has multiple monitors and looks at a second screen, the system marks them as suspicious or idle — even though they're actually working. I'm exploring solutions for this. Another challenge was making Flutter and Python work together smoothly — the Python process runs MediaPipe at ~5 FPS and streams results to Flutter without blocking the UI. Each browser also exposes accessibility data differently, so URL tracking needed custom handling per browser.",
+    role: "Solo Developer",
+    duration: "1 week (core build) + ongoing improvements",
     status: "In Development",
   },
   {
     title: "Point of Sale (POS) System",
     slug: "pos-system",
     description:
-      "A comprehensive cross-platform POS desktop application using Flutter & SQLite with multi-tenant architecture, role-based access control, real-time analytics, thermal/label printing, barcode scanner integration, and full inventory management.",
+      "A cross-platform POS desktop app for retail businesses. Supports barcode scanning, thermal printing, real-time analytics, and manages multiple stores from one account.",
     longDescription:
-      "A production-ready Point of Sale system designed for retail businesses, built as a cross-platform desktop application. The system supports multi-user environments with three distinct roles (Admin, Cashier, Seller) and implements a multi-tenant architecture where sellers can manage multiple client businesses, each with independent configurations, currencies, and feature access. Features include a full POS interface with barcode scanning, shift management with cash reconciliation, real-time analytics dashboard, inventory management with bulk import/export, a customer loyalty system with tier progression, and a printing system supporting ESC/POS thermal receipts, PDF generation, and a visual drag-and-drop barcode label layout editor.",
+      "A client asked me to build a POS system, and after using it in production, I turned it into a product I now sell. I already have my first paying customer and they're happy with it. I built this because most POS systems I've seen have real problems — refunding is overcomplicated, and if a customer steps away, you can't hold their cart and serve the next person. I fixed both of those. The system supports three roles (Admin, Cashier, Seller) with a multi-tenant setup so one seller can manage multiple stores, each with its own settings and currency. Right now I'm building the most exciting feature: local network sync — the admin laptop runs as a server, cashier devices connect to it, data syncs instantly, and if WiFi drops, cashiers keep working on their local database and sync back when reconnected.",
     tags: ["Flutter", "Dart", "SQLite", "ESC/POS", "PDF", "fl_chart"],
     image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/pos-admin-1_zwGU9bfpX.png",
     imageGroups: [
@@ -193,23 +198,23 @@ export const projects: Project[] = [
       "Multi-tenant architecture for sellers managing multiple client accounts with per-client feature restrictions",
       "ESC/POS thermal receipt printing, PDF receipts, and visual drag-and-drop barcode label layout editor",
       "Sales and shift reports with date filtering, exportable to CSV and Excel formats",
-      "150+ selectable category icons with custom color support and light/dark/system theme",
+      "Local network sync — admin laptop as server, cashier devices sync instantly, offline fallback with auto-resync (in development)",
     ],
     techDetails:
-      "Built with Flutter (Dart) targeting desktop platforms (Windows, Linux, macOS). SQLite database with an incremental schema migration system spanning 18 versions with backward compatibility. Architecture follows a Singleton services and Model-View pattern with guard widgets for permission enforcement. fl_chart powers interactive data visualizations. Printing uses pdf and printing packages for receipt and label generation with ESC/POS command generation including bitmap conversion for thermal printers. Export functionality supports CSV and Excel file generation with multi-sheet workbooks. Adaptive color system ensures consistency across light and dark modes.",
+      "Built with Flutter targeting Windows, Linux, and macOS. I chose SQLite because the system needs to work offline — it now has 18 schema versions with an incremental migration system that preserves all data when updating. fl_chart powers the admin dashboard charts. For printing, I wrote low-level ESC/POS commands with bitmap conversion to talk directly to thermal printers, and built a drag-and-drop barcode label editor. Reports export to CSV and Excel. The new local network sync feature uses the admin laptop as a server — cashier devices connect over WiFi and fall back to local storage when disconnected.",
     challenges:
-      "Implementing barcode scanner auto-detection required input timing analysis with a 50ms threshold to distinguish scanner input from keyboard typing — scanners send characters in rapid bursts while humans type much slower. Building the incremental database migration system across 18 schema versions demanded careful handling of backward compatibility and data preservation during upgrades. The visual drag-and-drop label layout editor needed precise coordinate mapping between the on-screen editor and the actual thermal printer output resolution. Generating ESC/POS commands with bitmap conversion for thermal printers involved low-level binary protocol work to ensure consistent output across different printer models.",
-    role: "Full Stack Developer",
-    duration: "Ongoing",
-    status: "In Development",
+      "The barcode scanner detection was a fun problem — scanners send characters in rapid bursts while humans type slowly, so I used a 50ms timing threshold to tell them apart. The thermal printer integration required low-level binary protocol work because different printer models behave differently with bitmap conversion. The database migration system across 18 versions was tricky — every update has to preserve existing data perfectly since real businesses depend on it. The current challenge is the local network sync: handling data conflicts when a cashier works offline and then reconnects to the admin server.",
+    role: "Solo Developer & Product Owner",
+    duration: "20 days (core build) + ongoing development",
+    status: "In Production — 1 paying customer",
   },
   {
     title: "TicketFlow - Queue & Appointment SaaS",
     slug: "ticketflow",
     description:
-      "Full-stack SaaS platform for queue management, appointment booking, and event ticketing with multi-tenant architecture, real-time updates, role-based access control, and a drag-and-drop homepage builder supporting 19+ customizable section types.",
+      "A SaaS platform for hospitals and service centers to manage queues and book appointments with QR confirmation. Built with 65+ API endpoints.",
     longDescription:
-      "TicketFlow is a comprehensive queue management, appointment booking, and event ticketing platform designed for organizations such as hospitals, clinics, and service centers. Built with Next.js 16, React 19, TypeScript, PostgreSQL, and Prisma ORM, the platform features a multi-tenant architecture (Organization > Branch > Counter) with full data isolation, 65+ secured REST API endpoints with Zod validation, and role-based access control across 5 user roles. The system includes a drag-and-drop homepage builder with 19+ section types, a template system with variable substitution, real-time queue tracking with sound notifications, multi-step appointment booking with QR confirmation, and event ticketing with QR-based check-in.",
+      "I built TicketFlow because I saw the same problem everywhere — hospitals, clinics, and government offices where people wait in long disorganized queues with no system to manage them. TicketFlow lets organizations manage queues in real-time and book appointments with QR confirmation. One feature I'm really proud of is the homepage builder — instead of calling a developer every time the hospital wants to show something new to their customers, the organization admin can visually edit the customer-facing homepage with 19+ section types using drag-and-drop. No code needed. The platform supports multiple branches and counters, 5 user roles, and 65+ secured API endpoints. I've tested it deeply and it works as a professional system — I'm still developing it before I start selling.",
     tags: ["Next.js", "React", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS", "NextAuth.js", "Zod"],
     image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/ticketflow-1_Jmlrc46U5.png",
     images: [
@@ -236,18 +241,18 @@ export const projects: Project[] = [
       "Role-based access control with 5 roles (Super Admin, Org Admin, Branch Admin, Staff, Customer)",
       "Drag-and-drop homepage builder with 19+ section types, per-section styling, gradients, and layout presets",
       "Template system with professional starter templates, save/load/activate, and variable substitution",
-      "Event ticketing with ticket types, pricing, and QR-based camera check-in",
+      "QR-based appointment confirmation and camera check-in at branches",
       "Large-screen real-time queue display board for branches",
       "RSA-2048 license management with domain binding",
       "65+ REST API endpoints with consistent error handling and Zod schema validation",
     ],
     techDetails:
-      "Frontend built with Next.js 16 App Router, React 19, TypeScript, and Tailwind CSS 4. UI layer uses Shadcn/ui, Radix UI, Lucide React (97+ icons), and Embla Carousel. Rich text editing powered by Tiptap Editor with colors, fonts, tables, and YouTube embeds. Backend runs on Next.js API Routes with 65+ REST endpoints. Database is PostgreSQL with Prisma ORM 7 featuring a 452-line schema with 15+ models (User, Organization, Branch, Service, Counter, QueueTicket, Event, etc.). Authentication via NextAuth.js with JWT and bcrypt password hashing. Middleware layer handles authentication, license gating, and role verification. Additional tooling includes QR code generation/scanning, DOMPurify for sanitization, date-fns for date handling, and dark mode support via next-themes.",
+      "Next.js 16 with App Router handles both the frontend and 65+ API routes. I chose PostgreSQL with Prisma because the data model is complex — 15+ related tables (organizations, branches, counters, services, queue tickets, appointments, users) in a 452-line schema. Authentication uses NextAuth.js with JWT and bcrypt. The UI is built with Shadcn/ui, Radix UI, and Tailwind CSS 4. The homepage builder uses Tiptap Editor for rich text with a drag-and-drop system I built using discriminated union types in TypeScript — each of the 19+ section types has its own Zod validation. QR codes handle appointment confirmations and check-in via camera scanning. Every API endpoint goes through middleware that checks authentication, license validity, and role permissions.",
     challenges:
-      "Designing the multi-tenant data isolation across organizations, branches, and counters while keeping query performance fast required careful Prisma schema design and middleware-level tenant scoping. The homepage builder with 19+ section types needed a flexible yet type-safe architecture — solved with a discriminated union pattern in TypeScript and Zod validation for each section config. Implementing real-time queue operations (call-next, skip, transfer) with consistent state across multiple staff screens demanded optimistic UI updates with server reconciliation. The RSA-2048 license system with domain binding required secure token generation and verification without exposing private keys to the client.",
-    role: "Full Stack Developer",
+      "The multi-tenant architecture was the biggest design challenge — every query needs to be scoped to the right organization, branch, and counter while staying fast. I solved this with middleware-level tenant scoping and careful Prisma schema design. The homepage builder was complex because 19+ section types each need different configs, styling options, and validation — I used TypeScript discriminated unions with Zod schemas per section type to keep it type-safe. The real-time queue operations (call-next, skip, transfer) needed to stay consistent when multiple staff members are using it at the same time, which required optimistic UI updates with server reconciliation.",
+    role: "Solo Developer & Product Owner",
     duration: "Ongoing",
-    status: "In Development",
+    status: "In Development — preparing for launch",
   },
 ];
 
