@@ -125,10 +125,10 @@ doc.font("Helvetica-Bold").fontSize(10.5).fillColor(BLACK).text("Luxury In Motio
 y = doc.y + 3;
 doc.font("Helvetica-Oblique").fontSize(9).fillColor(GRAY).text("Freelance Developer (Referral)  |  Next.js, React, TypeScript, Tailwind CSS  |  3\u20134 months  |  Completed", L, y, { width: W });
 y = doc.y + 6;
-y = bullet("Got this client through a referral from my former manager. Designed the UI/UX in Figma and built the entire site myself from scratch", y);
-y = bullet("Car rental showcase with 20+ luxury brand filtering, daily/weekly/monthly pricing, and booking via WhatsApp and call", y);
-y = bullet("SEO-optimized static generation so the site ranks well in Dubai's competitive rental market. Live at luxuryinmotiondubai.com", y);
-y = bullet("Client told my former manager: \"very honest and very good work, we are very happy with this guy\"", y);
+y = bullet("Got this client through a referral from my former manager. Took over an existing project and worked on it for 3\u20134 months \u2014 adding major features, rebuilding sections, and doing deep SEO work", y);
+y = bullet("Weekly Saturday meetings with the client throughout the project to review progress and plan next steps", y);
+y = bullet("Car rental showcase with 20+ luxury brand filtering, daily/weekly/monthly pricing, booking via WhatsApp and call. Live at luxuryinmotiondubai.com", y);
+y = bullet("Client feedback: \"very honest and very good work, we are very happy with this guy\"", y);
 
 y += 8;
 
