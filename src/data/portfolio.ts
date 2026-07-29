@@ -92,7 +92,7 @@ export const projects: Project[] = [
     longDescription:
       "This project was assigned to me by my manager while I was working at a company. One of our clients was a Dubai-based luxury car rental company, and the project had already been started by another developer who didn't have enough time to continue.\n\nI took over and worked on it for 3-4 months, adding major features, rebuilding sections, and doing deep SEO work to make the site visible on Google in Dubai's competitive rental market. The site showcases 20+ luxury brands (Ferrari, Rolls-Royce, Lamborghini, Mercedes, and more), lets customers filter by category or brand, see daily/weekly/monthly pricing, and book via WhatsApp or phone call.\n\nWe had weekly meetings every Saturday throughout the 3-4 months to review progress and plan next steps. The client was very happy with the result: they told my manager that I delivered honest, professional work.",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/luxury%20in%20motion%20duabi%20cover.png",
+    image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/luxury%20in%20motion%20cover.png",
     images: [
       "https://ik.imagekit.io/i0dqqmt1a/portfolio/luxury-1_4tEG9xd_B.png",
       "https://ik.imagekit.io/i0dqqmt1a/portfolio/luxury-2_5s6s4S0f1.png",
@@ -168,7 +168,7 @@ export const projects: Project[] = [
     longDescription:
       "A client asked me to build a POS system, and after using it in production, I turned it into a product I now sell. I already have my first paying customer and they're happy with it. I built this because most POS systems I've seen have real problems: refunding is overcomplicated, and if a customer steps away, you can't hold their cart and serve the next person. I fixed both of those. The system supports three roles (Admin, Cashier, Seller) with a multi-tenant setup so one seller can manage multiple stores, each with its own settings and currency. Right now I'm building the most exciting feature: local network sync. The admin laptop runs as a server, cashier devices connect to it, data syncs instantly, and if WiFi drops, cashiers keep working on their local database and sync back when reconnected.",
     tags: ["Flutter", "Dart", "SQLite", "ESC/POS", "PDF", "fl_chart"],
-    image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/pos-admin-1_zwGU9bfpX.png",
+    image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/POS%20system%20cover.png",
     imageGroups: [
       {
         label: "Admin Panel",
