@@ -29,7 +29,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative pt-28 sm:pt-32 pb-8 sm:pb-10 overflow-hidden"
     >
       {/* Glow Background Effects */}
       <div className="absolute inset-0 -z-10">
@@ -156,22 +156,6 @@ export default function Hero() {
                 <Icon size={20} />
               </motion.a>
             ))}
-          </motion.div>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="w-6 h-10 rounded-full border-2 border-gray-300 dark:border-white/20 flex justify-center pt-2"
-          >
-            <div className="w-1 h-2 rounded-full bg-green-500" />
           </motion.div>
         </motion.div>
       </div>

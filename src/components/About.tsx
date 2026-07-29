@@ -35,7 +35,7 @@ function renderParagraph(text: string) {
 
 export default function About() {
   return (
-    <section id="about" className="py-20 sm:py-28">
+    <section id="about" className="pt-10 sm:pt-14 pb-20 sm:pb-28">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <AnimatedSection>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-center text-gray-900 dark:text-white mb-4">
@@ -44,18 +44,11 @@ export default function About() {
           <div className="w-20 h-1 bg-gradient-to-r from-green-400 to-emerald-500 mx-auto rounded-full mb-16" />
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Profile Image */}
+        <div className="grid md:grid-cols-2 gap-6 md:gap-12 lg:gap-16 items-center">
+          {/* Profile Card */}
           <AnimatedSection delay={0.1}>
-            <div className="relative mx-auto w-52 h-52 sm:w-80 sm:h-80">
-              {/* Decorative glow behind image */}
-              <div className="absolute inset-0 rounded-full bg-green-500/20 blur-2xl scale-90" />
-
-              {/* Decorative ring */}
-              <div className="absolute -inset-2 rounded-full bg-gradient-to-br from-green-400/30 to-emerald-500/10" />
-
-              {/* Image */}
-              <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-green-400/20">
+            <div className="flex w-full items-center gap-4 p-4 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10">
+              <div className="relative w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-full overflow-hidden border-2 border-green-400/30">
                 <Image
                   src="/images/my_image.png"
                   alt={personalInfo.name}
@@ -63,16 +56,20 @@ export default function About() {
                   className="object-cover"
                 />
               </div>
+              <div>
+                <p className="font-display font-semibold text-gray-900 dark:text-white leading-tight">
+                  Amed Abdullhemid Ayoub
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  {personalInfo.title}
+                </p>
+              </div>
             </div>
           </AnimatedSection>
 
           {/* About Text */}
           <AnimatedSection delay={0.2}>
             <div className="space-y-5">
-              <h3 className="font-display text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">
-                From top CS graduate to international freelancer
-              </h3>
-
               {personalInfo.about.split("\n\n").map((paragraph, i) => (
                 <p
                   key={i}

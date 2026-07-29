@@ -68,21 +68,19 @@ export default function Navbar({
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
             {showBackButton ? (
-              <div className="flex items-center gap-2 min-w-0">
-                <button
-                  onClick={() => router.back()}
-                  aria-label="Go back"
-                  className="flex-shrink-0 text-gray-700 dark:text-gray-300
-                    hover:text-green-500 dark:hover:text-green-400 transition-colors"
-                >
-                  <FiChevronLeft size={22} />
-                </button>
+              <button
+                onClick={() => router.back()}
+                aria-label="Go back"
+                className="flex items-center gap-2 min-w-0 text-gray-700 dark:text-gray-300
+                  hover:text-green-500 dark:hover:text-green-400 transition-colors"
+              >
+                <FiChevronLeft size={22} className="flex-shrink-0" />
                 {title && (
                   <span className="text-sm font-semibold text-gray-900 dark:text-white truncate">
                     {title}
                   </span>
                 )}
-              </div>
+              </button>
             ) : (
               <a
                 href={getHref("#home")}

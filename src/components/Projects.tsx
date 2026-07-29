@@ -49,7 +49,7 @@ export default function Projects() {
           </h2>
           <div className="w-20 h-1 bg-green-500 mx-auto rounded-full mb-4" />
           <p className="text-center text-gray-500 dark:text-gray-400 max-w-xl mx-auto mb-12">
-            Real projects for real clients — from live production websites to complex desktop applications.
+            Real projects for real clients, from live production websites to complex desktop applications.
           </p>
         </AnimatedSection>
 

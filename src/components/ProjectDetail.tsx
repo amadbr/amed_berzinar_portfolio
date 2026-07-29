@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import AnimatedSection from "./AnimatedSection";
-import { Project } from "@/data/portfolio";
+import { Project, techIcons } from "@/data/portfolio";
 
 export default function ProjectDetail({ project }: { project: Project }) {
   const [selectedImage, setSelectedImage] = useState(0);
@@ -144,9 +144,16 @@ export default function ProjectDetail({ project }: { project: Project }) {
 
       {/* Long Description */}
       <AnimatedSection delay={0.15}>
-        <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-10">
-          {project.longDescription}
-        </p>
+        <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+          Overview
+        </h2>
+        <div className="space-y-4 mb-10">
+          {project.longDescription.split("\n\n").map((paragraph, i) => (
+            <p key={i} className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </AnimatedSection>
 
       {/* Key Features */}
@@ -173,15 +180,19 @@ export default function ProjectDetail({ project }: { project: Project }) {
           Tech Stack
         </h2>
         <div className="flex flex-wrap gap-2 mb-10">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-3 py-1.5 text-sm rounded-full bg-gray-100 dark:bg-white/5
-                text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-white/10"
-            >
-              {tag}
-            </span>
-          ))}
+          {project.tags.map((tag) => {
+            const Icon = techIcons[tag];
+            return (
+              <span
+                key={tag}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm rounded-full bg-gray-100 dark:bg-white/5
+                  text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-white/10"
+              >
+                {Icon && <Icon size={14} />}
+                {tag}
+              </span>
+            );
+          })}
         </div>
       </AnimatedSection>
 
@@ -190,9 +201,13 @@ export default function ProjectDetail({ project }: { project: Project }) {
         <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
           Technical Details
         </h2>
-        <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-10">
-          {project.techDetails}
-        </p>
+        <div className="space-y-4 mb-10">
+          {project.techDetails.split("\n\n").map((paragraph, i) => (
+            <p key={i} className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </AnimatedSection>
 
       {/* Challenges & Solutions */}
@@ -200,9 +215,13 @@ export default function ProjectDetail({ project }: { project: Project }) {
         <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
           Challenges & Solutions
         </h2>
-        <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-10">
-          {project.challenges}
-        </p>
+        <div className="space-y-4 mb-10">
+          {project.challenges.split("\n\n").map((paragraph, i) => (
+            <p key={i} className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </AnimatedSection>
 
       {/* Meta Cards */}
