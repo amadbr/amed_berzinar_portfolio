@@ -43,7 +43,7 @@ export default async function ProjectPage({
 
   return (
     <>
-      <Navbar />
+      <Navbar showBackButton title={project.title} />
       <main className="pt-20">
         <ProjectDetail project={project} />
       </main>

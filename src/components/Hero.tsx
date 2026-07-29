@@ -1,8 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiGithub, FiLinkedin, FiInstagram, FiMail, FiArrowRight } from "react-icons/fi";
-import { personalInfo } from "@/data/portfolio";
+import Link from "next/link";
+import Image from "next/image";
+import { FiGithub, FiLinkedin, FiInstagram, FiMail } from "react-icons/fi";
+import { personalInfo, getProjectBySlug } from "@/data/portfolio";
+
+const medkrdProject = getProjectBySlug("medkrd");
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -77,35 +81,38 @@ export default function Hero() {
             {personalInfo.tagline}
           </motion.p>
 
-          {/* CTA Buttons */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
-          >
-            <motion.a
-              href="#projects"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-              className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full
-                font-semibold text-sm bg-green-500 text-white
-                hover:bg-green-600 shadow-lg shadow-green-500/25
-                hover:shadow-green-500/40 transition-all duration-300"
+          {/* Featured Project Banner */}
+          {medkrdProject && (
+            <motion.div
+              variants={itemVariants}
+              className="max-w-xl mx-auto mb-12"
             >
-              View My Work
-              <FiArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </motion.a>
-            <a
-              href="#contact"
-              className="px-8 py-3.5 rounded-full font-semibold text-sm
-                border border-gray-300 dark:border-white/20
-                text-gray-700 dark:text-gray-300
-                hover:border-green-500 hover:text-green-500
-                dark:hover:border-green-500 dark:hover:text-green-400
-                transition-all duration-300"
-            >
-              Get In Touch
-            </a>
-          </motion.div>
+              <Link
+                href={`/projects/${medkrdProject.slug}`}
+                className="group relative block rounded-2xl overflow-hidden aspect-[16/10]
+                  border border-gray-200 dark:border-white/10
+                  hover:border-green-500 dark:hover:border-green-500
+                  shadow-lg hover:shadow-xl hover:shadow-green-500/10
+                  transition-all duration-300"
+              >
+                <Image
+                  src={medkrdProject.image}
+                  alt={medkrdProject.title}
+                  fill
+                  unoptimized
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+
+                {/* Always-visible dark tint + tap hint (no :hover — mobile has no hover state) */}
+                <div className="absolute inset-0 bg-black/20" />
+                <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-sm">
+                  <span className="text-xs font-medium text-white">
+                    Tap to view details
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+          )}
 
           {/* Social Links */}
           <motion.div

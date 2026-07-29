@@ -1,15 +1,23 @@
 "use client";
 
 import { useState, useEffect, useSyncExternalStore } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { FiChevronLeft } from "react-icons/fi";
 import ThemeToggle from "./ThemeToggle";
 import { navLinks } from "@/data/portfolio";
 
-export default function Navbar() {
+export default function Navbar({
+  showBackButton = false,
+  title,
+}: {
+  showBackButton?: boolean;
+  title?: string;
+}) {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const mounted = useSyncExternalStore(() => () => {}, () => true, () => false);
@@ -59,44 +67,66 @@ export default function Navbar() {
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
-            <a
-              href={getHref("#home")}
-              className="block hover:opacity-80 transition-opacity"
-            >
-              <Image
-                src={logoSrc}
-                alt="Amed Berzinar"
-                width={120}
-                height={48}
-                className={`h-10 md:h-12 w-auto ${isOpen ? "md:block hidden" : ""}`}
-              />
-            </a>
-
-            {/* Desktop Links */}
-            <div className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={getHref(link.href)}
-                  className="text-sm font-medium text-gray-600 dark:text-gray-300
-                    hover:text-green-500 dark:hover:text-green-400 transition-colors duration-300"
+            {showBackButton ? (
+              <div className="flex items-center gap-2 min-w-0">
+                <button
+                  onClick={() => router.back()}
+                  aria-label="Go back"
+                  className="flex-shrink-0 text-gray-700 dark:text-gray-300
+                    hover:text-green-500 dark:hover:text-green-400 transition-colors"
                 >
-                  {link.name}
-                </a>
-              ))}
-              <ThemeToggle />
-            </div>
-
-            {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="relative z-50 text-gray-700 dark:text-gray-300"
-                aria-label="Toggle menu"
+                  <FiChevronLeft size={22} />
+                </button>
+                {title && (
+                  <span className="text-sm font-semibold text-gray-900 dark:text-white truncate">
+                    {title}
+                  </span>
+                )}
+              </div>
+            ) : (
+              <a
+                href={getHref("#home")}
+                className="block hover:opacity-80 transition-opacity"
               >
-                {isOpen ? <HiX size={24} /> : <HiMenuAlt3 size={24} />}
-              </button>
-            </div>
+                <Image
+                  src={logoSrc}
+                  alt="Amed Berzinar"
+                  width={120}
+                  height={48}
+                  className={`h-10 md:h-12 w-auto ${isOpen ? "md:block hidden" : ""}`}
+                />
+              </a>
+            )}
+
+            {!showBackButton && (
+              <>
+                {/* Desktop Links */}
+                <div className="hidden md:flex items-center gap-8">
+                  {navLinks.map((link) => (
+                    <a
+                      key={link.name}
+                      href={getHref(link.href)}
+                      className="text-sm font-medium text-gray-600 dark:text-gray-300
+                        hover:text-green-500 dark:hover:text-green-400 transition-colors duration-300"
+                    >
+                      {link.name}
+                    </a>
+                  ))}
+                  <ThemeToggle />
+                </div>
+
+                {/* Mobile Menu Button */}
+                <div className="md:hidden flex items-center">
+                  <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="relative z-50 text-gray-700 dark:text-gray-300"
+                    aria-label="Toggle menu"
+                  >
+                    {isOpen ? <HiX size={24} /> : <HiMenuAlt3 size={24} />}
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </motion.nav>

@@ -209,14 +209,14 @@ export const projects: Project[] = [
     status: "In Production — 1 paying customer",
   },
   {
-    title: "TicketFlow - Queue & Appointment SaaS",
-    slug: "ticketflow",
+    title: "MEDKRD - Patient Appointment System",
+    slug: "medkrd",
     description:
-      "A SaaS platform for hospitals and service centers to manage queues and book appointments with QR confirmation. Built with 65+ API endpoints.",
+      "A patient appointment and queue management system built for MEDICO — the largest international health exhibition in Iraq & Kurdistan. Manage queues in real-time and book appointments with QR confirmation. Built with 65+ API endpoints.",
     longDescription:
-      "I built TicketFlow because I saw the same problem everywhere — hospitals, clinics, and government offices where people wait in long disorganized queues with no system to manage them. TicketFlow lets organizations manage queues in real-time and book appointments with QR confirmation. One feature I'm really proud of is the homepage builder — instead of calling a developer every time the hospital wants to show something new to their customers, the organization admin can visually edit the customer-facing homepage with 19+ section types using drag-and-drop. No code needed. The platform supports multiple branches and counters, 5 user roles, and 65+ secured API endpoints. I've tested it deeply and it works as a professional system — I'm still developing it before I start selling.",
+      "I built MEDKRD because I saw the same problem everywhere — hospitals, clinics, and government offices where people wait in long disorganized queues with no system to manage them. MEDKRD lets organizations manage queues in real-time and book appointments with QR confirmation. One feature I'm really proud of is the homepage builder — instead of calling a developer every time the hospital wants to show something new to their customers, the organization admin can visually edit the customer-facing homepage with 19+ section types using drag-and-drop. No code needed. The platform supports multiple branches and counters, 5 user roles, and 65+ secured API endpoints. I've tested it deeply and it works as a professional system — I'm still developing it before I start selling.",
     tags: ["Next.js", "React", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS", "NextAuth.js", "Zod"],
-    image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/ticketflow-1_Jmlrc46U5.png",
+    image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/Banner%20MEDKRD%20to%20MEDICO.png?tr=w-1600",
     images: [
       "https://ik.imagekit.io/i0dqqmt1a/portfolio/ticketflow-1_Jmlrc46U5.png",
       "https://ik.imagekit.io/i0dqqmt1a/portfolio/ticketflow-2_cJ_663k95.png",

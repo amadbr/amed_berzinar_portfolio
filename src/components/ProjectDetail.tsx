@@ -1,10 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { FiArrowLeft, FiExternalLink, FiGithub } from "react-icons/fi";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 import AnimatedSection from "./AnimatedSection";
 import { Project } from "@/data/portfolio";
 
@@ -20,68 +18,39 @@ export default function ProjectDetail({ project }: { project: Project }) {
       : null;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
-      {/* Back Link */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.4 }}
-      >
-        <Link
-          href="/#projects"
-          className="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400
-            hover:text-green-500 dark:hover:text-green-400 transition-colors mb-8"
-        >
-          <FiArrowLeft size={16} />
-          Back to Projects
-        </Link>
-      </motion.div>
-
-      {/* Header */}
-      <AnimatedSection>
-        <div className="flex flex-wrap items-center gap-3 mb-6">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
-            {project.title}
-          </h1>
-          <span className="px-3 py-1 text-xs font-medium rounded-full bg-green-500/10 text-green-600 dark:text-green-400">
-            {project.category}
-          </span>
-          <span className="px-3 py-1 text-xs font-medium rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400">
-            {project.status}
-          </span>
-        </div>
-      </AnimatedSection>
-
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-4 sm:pt-6 pb-10 sm:pb-16">
       {/* Action Buttons */}
-      <AnimatedSection delay={0.1}>
-        <div className="flex flex-wrap gap-4 mb-6">
-          {project.liveUrl !== "#" && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full
-                bg-green-500 text-white hover:bg-green-600 transition-colors font-medium text-sm"
-            >
-              <FiExternalLink size={18} />
-              Visit Website
-            </a>
-          )}
-          {project.githubUrl !== "#" && (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full
-                bg-gray-900 dark:bg-white text-white dark:text-gray-900
-                hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors font-medium text-sm"
-            >
-              <FiGithub size={18} />
-              View on GitHub
-            </a>
-          )}
-        </div>
-      </AnimatedSection>
+      {(project.liveUrl !== "#" || project.githubUrl !== "#") && (
+        <AnimatedSection delay={0.1}>
+          <div className="flex flex-wrap gap-4 mb-6">
+            {project.liveUrl !== "#" && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full
+                  bg-green-500 text-white hover:bg-green-600 transition-colors font-medium text-sm"
+              >
+                <FiExternalLink size={18} />
+                Visit Website
+              </a>
+            )}
+            {project.githubUrl !== "#" && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full
+                  bg-gray-900 dark:bg-white text-white dark:text-gray-900
+                  hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors font-medium text-sm"
+              >
+                <FiGithub size={18} />
+                View on GitHub
+              </a>
+            )}
+          </div>
+        </AnimatedSection>
+      )}
 
       {/* Project Image Gallery */}
       <AnimatedSection delay={0.15}>
