@@ -95,7 +95,7 @@ export default function Projects() {
                   transition-all duration-300"
               >
                 {/* Project Image */}
-                <div className="relative h-48 bg-gradient-to-br from-green-500/10 to-green-400/5 overflow-hidden">
+                <div className="relative h-60 bg-gradient-to-br from-green-500/10 to-green-400/5 overflow-hidden">
                   {project.image.startsWith("http") ? (
                     <Image
                       src={project.image}

@@ -92,7 +92,7 @@ export const projects: Project[] = [
     longDescription:
       "This project was assigned to me by my manager while I was working at a company. One of our clients was a Dubai-based luxury car rental company, and the project had already been started by another developer who didn't have enough time to continue.\n\nI took over and worked on it for 3-4 months, adding major features, rebuilding sections, and doing deep SEO work to make the site visible on Google in Dubai's competitive rental market. The site showcases 20+ luxury brands (Ferrari, Rolls-Royce, Lamborghini, Mercedes, and more), lets customers filter by category or brand, see daily/weekly/monthly pricing, and book via WhatsApp or phone call.\n\nWe had weekly meetings every Saturday throughout the 3-4 months to review progress and plan next steps. The client was very happy with the result: they told my manager that I delivered honest, professional work.",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/luxury-1_4tEG9xd_B.png",
+    image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/luxury%20in%20motion%20duabi%20cover.png",
     images: [
       "https://ik.imagekit.io/i0dqqmt1a/portfolio/luxury-1_4tEG9xd_B.png",
       "https://ik.imagekit.io/i0dqqmt1a/portfolio/luxury-2_5s6s4S0f1.png",
@@ -129,7 +129,7 @@ export const projects: Project[] = [
     longDescription:
       "I built this because of a real problem I saw at a company I used to work at: lazy workers who weren't doing their job, and managers who had no way to see what was actually happening. I wanted to give managers a clear picture of their team's productivity so they could make their business successful. The app tracks everything: mouse and keyboard activity, which apps are being used, what websites are open, and even uses AI eye-tracking through the camera to detect if someone is paying attention or not. It runs fully offline with no cloud dependency, and generates daily PDF reports for each worker. I built the whole thing in about one week using Flutter for the UI and Python for the AI eye-tracking side.",
     tags: ["Flutter", "Dart", "Python", "MediaPipe", "Win32 FFI", "SQLite"],
-    image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/worker-1_1YCm1AysbY.png",
+    image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/Worker%20Monitor%20Activity%20Cover.png",
     images: [
       "https://ik.imagekit.io/i0dqqmt1a/portfolio/worker-1_1YCm1AysbY.png",
       "https://ik.imagekit.io/i0dqqmt1a/portfolio/worker-2_UGySskm-l.png",
