@@ -168,7 +168,7 @@ export const projects: Project[] = [
     longDescription:
       "A client asked me to build a POS system, and after using it in production, I turned it into a product I now sell. I already have my first paying customer and they're happy with it. I built this because most POS systems I've seen have real problems: refunding is overcomplicated, and if a customer steps away, you can't hold their cart and serve the next person. I fixed both of those. The system supports three roles (Admin, Cashier, Seller) with a multi-tenant setup so one seller can manage multiple stores, each with its own settings and currency. Right now I'm building the most exciting feature: local network sync. The admin laptop runs as a server, cashier devices connect to it, data syncs instantly, and if WiFi drops, cashiers keep working on their local database and sync back when reconnected.",
     tags: ["Flutter", "Dart", "SQLite", "ESC/POS", "PDF", "fl_chart"],
-    image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/POS%20system%20cover.png",
+    image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/POS%20system%20cover.png?updatedAt=1785333145815",
     imageGroups: [
       {
         label: "Admin Panel",
@@ -224,7 +224,7 @@ export const projects: Project[] = [
     longDescription:
       "I built MEDKRD because I saw the same problem everywhere: hospitals, clinics, and government offices where people wait in long disorganized queues with no system to manage them. MEDKRD lets organizations manage queues in real-time and book appointments with QR confirmation. One feature I'm really proud of is the homepage builder: instead of calling a developer every time the hospital wants to show something new to their customers, the organization admin can visually edit the customer-facing homepage with 19+ section types using drag-and-drop. No code needed. The platform supports multiple branches and counters, 5 user roles, and 65+ secured API endpoints. I've tested it deeply and it works as a professional system. I'm still developing it before I start selling.",
     tags: ["Next.js", "React", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS", "NextAuth.js", "Zod"],
-    image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/Banner%20MEDKRD%20to%20MEDICO.png?tr=w-1600",
+    image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/Banner%20MEDKRD%20to%20MEDICO.png?tr=ar-3-2,w-1536",
     images: [
       "https://ik.imagekit.io/i0dqqmt1a/portfolio/ticketflow-1_Jmlrc46U5.png",
       "https://ik.imagekit.io/i0dqqmt1a/portfolio/ticketflow-2_cJ_663k95.png",

@@ -95,14 +95,14 @@ export default function Projects() {
                   transition-all duration-300"
               >
                 {/* Project Image */}
-                <div className="relative h-60 bg-gradient-to-br from-green-500/10 to-green-400/5 overflow-hidden">
+                <div className="relative aspect-[3/2] bg-gradient-to-br from-green-500/10 to-green-400/5 overflow-hidden">
                   {project.image.startsWith("http") ? (
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
                       unoptimized
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-contain group-hover:scale-105 transition-transform duration-500"
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
