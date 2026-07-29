@@ -68,10 +68,11 @@ export interface Project {
   slug: string;
   description: string;
   longDescription: string;
+  highlights?: { label: string; text: string }[];
   tags: string[];
   image: string;
   images?: string[];
-  imageGroups?: { label: string; images: string[] }[];
+  imageGroups?: { label: string; images: string[]; orientation?: "landscape" | "portrait" }[];
   liveUrl: string;
   githubUrl: string;
   category: string;
@@ -217,47 +218,80 @@ export const projects: Project[] = [
     status: "In Production (1 paying customer)",
   },
   {
-    title: "MEDKRD - Patient Appointment System",
+    title: "MEDKRD - Multi-Branch Clinic Operating System",
     slug: "medkrd",
     description:
-      "A patient appointment and queue management system built for MEDICO, the largest international health exhibition in Iraq & Kurdistan. Manage queues in real-time and book appointments with QR confirmation. Built with 65+ API endpoints.",
+      "A clinic management system that covers the whole patient visit, from booking to picking up medicine. Built for MEDICO, the largest health exhibition in Iraq & Kurdistan.",
     longDescription:
-      "I built MEDKRD because I saw the same problem everywhere: hospitals, clinics, and government offices where people wait in long disorganized queues with no system to manage them. MEDKRD lets organizations manage queues in real-time and book appointments with QR confirmation. One feature I'm really proud of is the homepage builder: instead of calling a developer every time the hospital wants to show something new to their customers, the organization admin can visually edit the customer-facing homepage with 19+ section types using drag-and-drop. No code needed. The platform supports multiple branches and counters, 5 user roles, and 65+ secured API endpoints. I've tested it deeply and it works as a professional system. I'm still developing it before I start selling.",
-    tags: ["Next.js", "React", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS", "NextAuth.js", "Zod"],
+      "MEDKRD helps clinics manage patients from booking to pickup, all in one place.",
+    highlights: [
+      {
+        label: "What is it?",
+        text: "A system that helps clinics manage a patient's entire visit in one place, from booking an appointment to picking up medicine.",
+      },
+      {
+        label: "The problem",
+        text: "Clinics usually rely on separate tools that don't talk to each other, like a paper queue and a pharmacy notebook. Patients wait around with no idea how long is left.",
+      },
+      {
+        label: "The benefit",
+        text: "Patients can book online and see exactly where they are in line. Doctors, lab staff, and pharmacists all work from the same system, so nothing gets lost or repeated.",
+      },
+      {
+        label: "Who it's for",
+        text: "Hospitals and clinic networks with multiple branches, doctors, and departments.",
+      },
+    ],
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "PostgreSQL", "Prisma", "NextAuth.js", "Zod"],
     image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/Banner%20MEDKRD%20to%20MEDICO.png?tr=ar-3-2,w-1536",
-    images: [
-      "https://ik.imagekit.io/i0dqqmt1a/portfolio/ticketflow-1_Jmlrc46U5.png",
-      "https://ik.imagekit.io/i0dqqmt1a/portfolio/ticketflow-2_cJ_663k95.png",
-      "https://ik.imagekit.io/i0dqqmt1a/portfolio/ticketflow-3_ECttY3U11Z.png",
-      "https://ik.imagekit.io/i0dqqmt1a/portfolio/ticketflow-4_9ePJ5Zy-c.png",
-      "https://ik.imagekit.io/i0dqqmt1a/portfolio/ticketflow-5_ukwb3X8LV.png",
-      "https://ik.imagekit.io/i0dqqmt1a/portfolio/ticketflow-6_eoYR1eNmv.png",
-      "https://ik.imagekit.io/i0dqqmt1a/portfolio/ticketflow-7_p3RwNbz0T.png",
-      "https://ik.imagekit.io/i0dqqmt1a/portfolio/ticketflow-8_mHV9PBgmh.png",
-      "https://ik.imagekit.io/i0dqqmt1a/portfolio/ticketflow-9_d6YXLSuN6.png",
-      "https://ik.imagekit.io/i0dqqmt1a/portfolio/ticketflow-10_et0kfL7bA.png",
-      "https://ik.imagekit.io/i0dqqmt1a/portfolio/ticketflow-11_ii22YunTx.png",
-      "https://ik.imagekit.io/i0dqqmt1a/portfolio/ticketflow-12_MVMDt33Hs.png",
+    imageGroups: [
+      {
+        label: "Hospital Dashboard",
+        images: [
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/hospital%20dashboard/Screenshot%202026-07-29%20at%205.19.50%E2%80%AFPM.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/hospital%20dashboard/Screenshot%202026-07-29%20at%205.20.00%E2%80%AFPM.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/hospital%20dashboard/Screenshot%202026-07-29%20at%205.20.25%E2%80%AFPM.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/hospital%20dashboard/Screenshot%202026-07-29%20at%205.20.40%E2%80%AFPM.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/hospital%20dashboard/Screenshot%202026-07-29%20at%205.20.12%E2%80%AFPM.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/hospital%20dashboard/Screenshot%202026-07-29%20at%205.21.05%E2%80%AFPM.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/hospital%20dashboard/Screenshot%202026-07-29%20at%205.20.52%E2%80%AFPM.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/hospital%20dashboard/Screenshot%202026-07-29%20at%205.27.26%E2%80%AFPM.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/hospital%20dashboard/Screenshot%202026-07-29%20at%205.27.08%E2%80%AFPM.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/hospital%20dashboard/Screenshot%202026-07-29%20at%205.27.16%E2%80%AFPM.png",
+        ],
+      },
+      {
+        label: "Patient App",
+        orientation: "portrait",
+        images: [
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/patient%20side/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-07-29%20at%2017.51.30.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/patient%20side/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-07-29%20at%2017.52.00.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/patient%20side/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-07-29%20at%2017.52.30.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/patient%20side/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-07-29%20at%2017.52.20.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/patient%20side/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-07-29%20at%2017.52.47.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/patient%20side/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-07-29%20at%2017.52.35.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/patient%20side/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-07-29%20at%2017.52.25.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/patient%20side/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-07-29%20at%2017.52.57.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/patient%20side/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-07-29%20at%2017.53.03.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/MEDKRD%20-%20images/patient%20side/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-07-29%20at%2017.51.47.png",
+        ],
+      },
     ],
     liveUrl: "#",
     githubUrl: "#",
     category: "Web App",
     features: [
-      "Real-time queue management with call-next, skip, transfer, no-show operations and sound notifications",
-      "Multi-step appointment booking wizard (service > date/time > review > QR confirmation)",
-      "Multi-tenant architecture with Organization > Branch > Counter hierarchy and data isolation",
-      "Role-based access control with 5 roles (Super Admin, Org Admin, Branch Admin, Staff, Customer)",
-      "Drag-and-drop homepage builder with 19+ section types, per-section styling, gradients, and layout presets",
-      "Template system with professional starter templates, save/load/activate, and variable substitution",
-      "QR-based appointment confirmation and camera check-in at branches",
-      "Large-screen real-time queue display board for branches",
-      "RSA-2048 license management with domain binding",
-      "65+ REST API endpoints with consistent error handling and Zod schema validation",
+      "Book an appointment online in a few taps",
+      "See your live position in the queue",
+      "Doctors can see patient history and order tests instantly",
+      "Lab results and prescriptions are tracked automatically",
+      "Each staff role only sees what they need",
+      "Clinics can build their own website without coding",
     ],
     techDetails:
-      "Next.js 16 with App Router handles both the frontend and 65+ API routes. I chose PostgreSQL with Prisma because the data model is complex: 15+ related tables (organizations, branches, counters, services, queue tickets, appointments, users) in a 452-line schema. Authentication uses NextAuth.js with JWT and bcrypt. The UI is built with Shadcn/ui, Radix UI, and Tailwind CSS 4. The homepage builder uses Tiptap Editor for rich text with a drag-and-drop system I built using discriminated union types in TypeScript. Each of the 19+ section types has its own Zod validation. QR codes handle appointment confirmations and check-in via camera scanning. Every API endpoint goes through middleware that checks authentication, license validity, and role permissions.",
+      "Built with Next.js, React, and TypeScript, with PostgreSQL as the database. Patients, doctors, and staff all get a real-time experience, and clinics can turn features on or off depending on what they need.",
     challenges:
-      "The multi-tenant architecture was the biggest design challenge: every query needs to be scoped to the right organization, branch, and counter while staying fast. I solved this with middleware-level tenant scoping and careful Prisma schema design. The homepage builder was complex because 19+ section types each need different configs, styling options, and validation. I used TypeScript discriminated unions with Zod schemas per section type to keep it type-safe. The real-time queue operations (call-next, skip, transfer) needed to stay consistent when multiple staff members are using it at the same time, which required optimistic UI updates with server reconciliation.",
+      "The hardest part was making sure two staff members can never overwrite each other by accident, like two people trying to help the same patient at once. I also made sure permissions stay clear, so only the right person can approve or cancel each step.\n\nA couple of small features, like analytics charts and after-visit feedback, are still being finished.",
     role: "Solo Developer & Product Owner",
     duration: "Ongoing",
     status: "In Development (preparing for launch)",
