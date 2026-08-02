@@ -15,6 +15,7 @@ import {
   SiSqlite,
   SiZod,
   SiMediapipe,
+  SiSupabase,
 } from "react-icons/si";
 
 export const personalInfo = {
@@ -61,6 +62,7 @@ export const techIcons: Record<string, IconType> = {
   SQLite: SiSqlite,
   Zod: SiZod,
   MediaPipe: SiMediapipe,
+  Supabase: SiSupabase,
 };
 
 export interface Project {
@@ -85,6 +87,87 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    title: "Omer eSIM - International eSIM Marketplace",
+    slug: "omer-esim",
+    description:
+      "A mobile app for buying international travel eSIMs instantly, covering 178+ destinations with secure in-app payments through Iraq's FIB bank, backed by a full admin platform I built to manage plans, pricing, and customers.",
+    longDescription:
+      "Omer eSIM lets travelers buy a data eSIM for almost any country in the world straight from their phone, no physical SIM card, no roaming fees, and no waiting. The mobile app is built with Flutter and Dart so it runs natively on iOS and Android from one codebase, and it covers 178+ destinations with local and regional data plans.\n\nBehind the app is an admin platform I built with Next.js and Node.js, backed by Supabase and deployed on Vercel. It handles everything the business side needs: syncing eSIM plans and live pricing from the provider, applying a configurable markup on top of provider cost, managing coupons, tracking every transaction and customer, and customizing what shows up on the app's home screen (banners and popular destinations).\n\nPayments run through FIB (First Iraq Bank), so customers in Iraq can pay directly and securely without needing an international card. Every payment callback from FIB is logged in the admin dashboard so I can track paid, unpaid, and declined orders in real time and debug issues fast.",
+    highlights: [
+      {
+        label: "What is it?",
+        text: "A Flutter mobile app for buying international eSIMs, paired with a Next.js admin platform to manage plans, pricing, coupons, and customers.",
+      },
+      {
+        label: "The problem",
+        text: "Travelers pay high roaming fees or waste time hunting for a local SIM card, and there was no simple way for Iraqi customers to pay for an eSIM using a local bank.",
+      },
+      {
+        label: "The benefit",
+        text: "Instant eSIM activation across 178+ destinations, paid for securely through FIB, with an admin dashboard that gives full control over pricing, plans, and orders.",
+      },
+      {
+        label: "Who it's for",
+        text: "Travelers who want data the moment they land, and the business side that needs to manage catalog, pricing, and customers without touching code.",
+      },
+    ],
+    tags: ["Flutter", "Dart", "Next.js", "Node.js", "Supabase", "Vercel", "FIB Payment Gateway"],
+    image:
+      "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Omer-eSIM-Cover.png?updatedAt=1785651907186",
+    imageGroups: [
+      {
+        label: "Admin Dashboard",
+        images: [
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Admin%20Dashboard%20images/Screenshot%202026-08-02%20at%209.35.22%E2%80%AFAM.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Admin%20Dashboard%20images/Screenshot%202026-08-02%20at%209.35.30%E2%80%AFAM.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Admin%20Dashboard%20images/Screenshot%202026-08-02%20at%209.35.38%E2%80%AFAM.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Admin%20Dashboard%20images/Screenshot%202026-08-02%20at%209.35.46%E2%80%AFAM.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Admin%20Dashboard%20images/Screenshot%202026-08-02%20at%209.35.54%E2%80%AFAM.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Admin%20Dashboard%20images/Screenshot%202026-08-02%20at%209.36.01%E2%80%AFAM.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Admin%20Dashboard%20images/Screenshot%202026-08-02%20at%209.36.09%E2%80%AFAM.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Admin%20Dashboard%20images/Screenshot%202026-08-02%20at%209.36.16%E2%80%AFAM.png",
+        ],
+      },
+      {
+        label: "App Screens",
+        orientation: "portrait",
+        images: [
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Simulator%20Screenshot%20-%20iPhone%20Air%20-%202026-08-02%20at%2009.08.39.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Simulator%20Screenshot%20-%20iPhone%20Air%20-%202026-08-02%20at%2009.08.45.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Simulator%20Screenshot%20-%20iPhone%20Air%20-%202026-08-02%20at%2009.11.08.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Simulator%20Screenshot%20-%20iPhone%20Air%20-%202026-08-02%20at%2009.11.16.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Simulator%20Screenshot%20-%20iPhone%20Air%20-%202026-08-02%20at%2009.11.38.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Simulator%20Screenshot%20-%20iPhone%20Air%20-%202026-08-02%20at%2009.11.46.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Simulator%20Screenshot%20-%20iPhone%20Air%20-%202026-08-02%20at%2009.11.52.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Simulator%20Screenshot%20-%20iPhone%20Air%20-%202026-08-02%20at%2009.11.57.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Simulator%20Screenshot%20-%20iPhone%20Air%20-%202026-08-02%20at%2009.12.10.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Omer-eSIM/Simulator%20Screenshot%20-%20iPhone%20Air%20-%202026-08-02%20at%2009.12.15.png",
+        ],
+      },
+    ],
+    liveUrl: "#",
+    githubUrl: "#",
+    category: "Mobile App",
+    features: [
+      "Browse and buy eSIMs for 178+ destinations with local and regional data plans",
+      "In-app checkout powered by FIB (First Iraq Bank), with real-time payment callbacks logged for every order",
+      "Admin dashboard with live overview stats: eSIMs sold, active plans, 30-day revenue, and registered customers",
+      "Provider sync to pull live eSIM plans and pricing automatically instead of managing them by hand",
+      "Configurable pricing markup applied on top of provider cost to set the customer-facing price across the whole catalog",
+      "Coupon system for percentage discounts scoped to specific countries or plans, validated server-side at checkout",
+      "Customer and transaction management with searchable order history and status tracking (paid, unpaid, declined, cancelled)",
+      "App home screen customization: banner carousel and curated Popular Destinations, editable without redeploying the app",
+      "WhatsApp support contact configurable from the admin dashboard",
+    ],
+    techDetails:
+      "The customer-facing app is built with Flutter and Dart, giving one codebase for both iOS and Android. The admin platform and backend run on Next.js and Node.js, deployed on Vercel, with Supabase handling the database and auth. Payments go through FIB's API, and every callback FIB sends is recorded permanently in the admin dashboard so payment status is always traceable. The admin side also drives the app's content, like home banners and popular destinations, without needing an app update.",
+    challenges:
+      "Integrating FIB as a payment provider meant handling asynchronous callbacks correctly, an order can come back as paid, unpaid, or declined well after the request is made, so I built a callback log in the admin dashboard to keep every status update traceable and debuggable. Keeping 178+ destinations worth of eSIM plans and pricing in sync with the provider while still letting me apply my own markup on top was another challenge, solved with a dedicated Provider Sync flow and a single configurable markup percentage instead of manually pricing every plan.",
+    role: "Full-Stack & Mobile Developer",
+    duration: "Ongoing",
+    status: "Live",
+  },
   {
     title: "Luxury In Motion Dubai",
     slug: "luxury-in-motion-dubai",

@@ -7,7 +7,7 @@ import Image from "next/image";
 import AnimatedSection from "./AnimatedSection";
 import { projects } from "@/data/portfolio";
 
-const categories = ["All", "Web App", "Desktop App"];
+const categories = ["All", "Web App", "Mobile App", "Desktop App"];
 
 export default function Projects() {
   const [active, setActive] = useState("All");
