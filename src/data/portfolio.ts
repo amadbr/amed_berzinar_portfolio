@@ -16,6 +16,7 @@ import {
   SiZod,
   SiMediapipe,
   SiSupabase,
+  SiMysql,
 } from "react-icons/si";
 
 export const personalInfo = {
@@ -63,6 +64,7 @@ export const techIcons: Record<string, IconType> = {
   Zod: SiZod,
   MediaPipe: SiMediapipe,
   Supabase: SiSupabase,
+  MySQL: SiMysql,
 };
 
 export interface Project {
@@ -87,6 +89,98 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    title: "Z-Exchange - Money Exchange Platform",
+    slug: "z-exchange",
+    description:
+      "A mobile app for exchanging money between banks, cards, and digital wallets in Iraq (Qi Card, FIB, Zain Cash, PayPal, and more), with a companion app for exchange offices to review, confirm, and pay out every request.",
+    longDescription:
+      "Z-Exchange solves a very local problem: moving money between different banks and digital wallets in Iraq usually means physically going to an exchange office. If you have money on a Qi Card and need it on FIB, or you're holding Zain Cash and need PayPal, someone has to manually handle that swap in person.\n\nWith Z-Exchange, a customer opens the app, picks a sending source and a receiving destination (Qi Card, FIB, Zain Cash, PayPal, Payoneer, NassPay, NassWallet, Mastercard, Visa, and more), enters an amount like 10,000 IQD, and submits the request with payment proof. On the other side, an exchange office runs its own app: an Overview screen shows volume, profit, pending queue, and customer counts, and staff can confirm payment, send the payout, reject a request, or resolve a dispute directly from their phone.\n\nOffice owners can add sub-admins with granular permissions (who can view requests, confirm payments, send payouts, manage banks, or manage exchange rates), so a small exchange business can run its whole request queue without a physical counter. The app also supports English, Arabic, and both Kurdish dialects (Badini and Sorani), since that's who's actually using it day to day.",
+    highlights: [
+      {
+        label: "What is it?",
+        text: "A Flutter app pair: a customer app for requesting money exchanges between banks and wallets, and an office app for exchange businesses to process those requests.",
+      },
+      {
+        label: "The problem",
+        text: "Moving money between different Iraqi banks and digital wallets (Qi Card, FIB, Zain Cash, and others) normally means visiting an exchange office in person.",
+      },
+      {
+        label: "The benefit",
+        text: "Request an exchange from your phone in seconds, and exchange offices get a full queue, permissions, and reporting system instead of handling everything by hand.",
+      },
+      {
+        label: "Who it's for",
+        text: "Anyone who needs to move money between incompatible banks or wallets, and exchange offices that want to run their business through an app instead of a counter.",
+      },
+    ],
+    tags: ["Flutter", "Dart", "Node.js", "MySQL"],
+    image: "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/4fc1e7da-03e9-438b-b75d-1c36bdc1b3aa.png",
+    imageGroups: [
+      {
+        label: "Customer App",
+        orientation: "portrait",
+        images: [
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/Customer%20App/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.54.58.png?updatedAt=1785657520187",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/Customer%20App/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.55.04.png?updatedAt=1785657520108",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/Customer%20App/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.55.09.png?updatedAt=1785657519990",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/Customer%20App/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.55.29.png?updatedAt=1785657520097",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/Customer%20App/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.55.38.png?updatedAt=1785657520084",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/Customer%20App/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.55.52.png?updatedAt=1785657520194",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/Customer%20App/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.56.29.png?updatedAt=1785657520337",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/Customer%20App/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.56.36.png?updatedAt=1785657520386",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/Customer%20App/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.56.48.png?updatedAt=1785657520745",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/Customer%20App/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.56.59.png?updatedAt=1785657519956",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/Customer%20App/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.57.07.png?updatedAt=1785657520515",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/Customer%20App/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.57.15.png?updatedAt=1785657520623",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/Customer%20App/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.57.20.png?updatedAt=1785657520281",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/Customer%20App/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.57.29.png?updatedAt=1785657520271",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/Customer%20App/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.57.34.png?updatedAt=1785657520221",
+        ],
+      },
+      {
+        label: "Admin App",
+        orientation: "portrait",
+        images: [
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/admin%20app%20dashboard/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.59.23.png?updatedAt=1785657718648",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/admin%20app%20dashboard/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.59.31.png?updatedAt=1785657719422",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/admin%20app%20dashboard/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.59.37.png?updatedAt=1785657719323",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/admin%20app%20dashboard/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.59.45.png?updatedAt=1785657719282",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/admin%20app%20dashboard/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2010.59.50.png?updatedAt=1785657719331",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/admin%20app%20dashboard/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2011.00.04.png?updatedAt=1785657719221",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/admin%20app%20dashboard/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2011.00.15.png?updatedAt=1785657719382",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/admin%20app%20dashboard/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2011.00.22.png?updatedAt=1785657719020",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/admin%20app%20dashboard/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2011.00.32.png?updatedAt=1785657719144",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/admin%20app%20dashboard/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2011.00.40.png?updatedAt=1785657718931",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/admin%20app%20dashboard/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2011.00.49.png?updatedAt=1785657719014",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/admin%20app%20dashboard/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2011.00.56.png?updatedAt=1785657718984",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/admin%20app%20dashboard/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2011.01.01.png?updatedAt=1785657718857",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/admin%20app%20dashboard/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2011.01.07.png?updatedAt=1785657718887",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Z-Exchange/admin%20app%20dashboard/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2011.01.14.png?updatedAt=1785657718724",
+        ],
+      },
+    ],
+    liveUrl: "#",
+    githubUrl: "#",
+    category: "Mobile App",
+    features: [
+      "Request money exchanges between banks, cards, and digital wallets (Qi Card, FIB, Zain Cash, PayPal, Payoneer, NassPay, NassWallet, Mastercard, Visa, and more)",
+      "Pick a sending source and receiving destination, enter an amount, and submit payment proof for the office to verify",
+      "Notifications for request status: expired requests, returned requests needing new proof, and completed exchanges",
+      "Office app with a live Overview: exchange volume, profit, pending queue, and total customers",
+      "Request queue management for office staff: confirm payment, send payout, reject a request, or resolve a dispute",
+      "Role-based sub-admin permissions covering requests, banks and office accounts, and exchange/currency rates, toggled per admin",
+      "Multi-language support: English, Arabic, Kurdish Badini, and Kurdish Sorani",
+      "Secure onboarding with phone verification via WhatsApp or SMS and enforced password strength rules",
+    ],
+    techDetails:
+      "Both the customer app and the exchange office app are built with Flutter and Dart from a single codebase, covering iOS and Android. The backend runs on Node.js with a MySQL database handling users, exchange requests, permissions, and rates. Office staff permissions are stored per sub-admin and checked on every action (confirming payment, sending payout, managing rates), so an office owner can safely delegate work without giving full access.",
+    challenges:
+      "The core challenge was modeling the exchange request lifecycle correctly: a request can expire before payment is confirmed, get returned to the customer for new proof, get rejected, or end in a dispute, and every one of those states needed its own notification and queue behavior so nothing silently falls through. Building a real permissions system for office sub-admins was another one, since one office can have multiple staff members who should only be able to do part of the job (like confirming payments but not managing currency rates), so permissions had to be enforced on the backend, not just hidden in the UI.",
+    role: "Full-Stack & Mobile Developer",
+    duration: "Ongoing",
+    status: "Live",
+  },
   {
     title: "Omer eSIM - International eSIM Marketplace",
     slug: "omer-esim",
