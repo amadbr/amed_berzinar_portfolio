@@ -9,6 +9,7 @@ import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { FiChevronLeft } from "react-icons/fi";
 import ThemeToggle from "./ThemeToggle";
 import { navLinks } from "@/data/portfolio";
+import { scrollToSection } from "@/lib/scroll";
 
 export default function Navbar({
   showBackButton = false,
@@ -51,6 +52,12 @@ export default function Navbar({
     return isHome ? hash : `/${hash}`;
   }
 
+  function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, hash: string) {
+    if (!isHome) return;
+    e.preventDefault();
+    scrollToSection(hash.slice(1));
+  }
+
   return (
     <>
       <motion.nav
@@ -84,6 +91,7 @@ export default function Navbar({
             ) : (
               <a
                 href={getHref("#home")}
+                onClick={(e) => handleNavClick(e, "#home")}
                 className="block hover:opacity-80 transition-opacity"
               >
                 <Image
@@ -104,6 +112,7 @@ export default function Navbar({
                     <a
                       key={link.name}
                       href={getHref(link.href)}
+                      onClick={(e) => handleNavClick(e, link.href)}
                       className="text-sm font-medium text-gray-600 dark:text-gray-300
                         hover:text-green-500 dark:hover:text-green-400 transition-colors duration-300"
                     >
@@ -150,7 +159,10 @@ export default function Navbar({
                 <motion.a
                   key={link.name}
                   href={getHref(link.href)}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    handleNavClick(e, link.href);
+                    setIsOpen(false);
+                  }}
                   variants={{
                     hidden: { opacity: 0, y: 20 },
                     visible: { opacity: 1, y: 0 },

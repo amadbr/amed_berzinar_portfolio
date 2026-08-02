@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import { skills } from "@/data/portfolio";
+import { scrollToSection } from "@/lib/scroll";
 
 const categories = ["All", "Frontend", "Backend", "Mobile & Desktop", "Tools"];
 
@@ -27,7 +28,14 @@ export default function Skills() {
           <p className="text-center text-gray-500 dark:text-gray-400 max-w-xl mx-auto mb-12">
             Technologies I use to build web, desktop, and mobile applications for my clients.
             {" "}See them in action in my{" "}
-            <a href="#projects" className="text-green-500 hover:text-green-400 underline underline-offset-2 font-medium transition-colors">
+            <a
+              href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("projects");
+              }}
+              className="text-green-500 hover:text-green-400 underline underline-offset-2 font-medium transition-colors"
+            >
               projects
             </a>.
           </p>

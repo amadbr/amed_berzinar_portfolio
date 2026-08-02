@@ -7,11 +7,6 @@
   --font-display: var(--font-fredoka), var(--font-poppins);
 }
 
-/* Smooth Scroll */
-html {
-  scroll-behavior: smooth;
-}
-
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;

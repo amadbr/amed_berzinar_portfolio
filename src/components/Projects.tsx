@@ -129,20 +129,9 @@ export default function Projects() {
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-green-500 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2">
+                  <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2.5 py-1 text-xs rounded-full bg-gray-100 dark:bg-white/5
-                          text-gray-600 dark:text-gray-400"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </Link>
             </motion.div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
@@ -15,7 +15,9 @@ export default function ProjectDetail({ project }: { project: Project }) {
   const [activeGroup, setActiveGroup] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const thumbStripRef = useRef<HTMLDivElement | null>(null);
   const thumbRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const isFirstRender = useRef(true);
 
   const hasGroups = project.imageGroups && project.imageGroups.length > 0;
   const gallery = hasGroups
@@ -24,6 +26,10 @@ export default function ProjectDetail({ project }: { project: Project }) {
       ? project.images
       : null;
   const isPortrait = hasGroups && project.imageGroups![activeGroup].orientation === "portrait";
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   function goToImage(index: number) {
     const el = scrollRef.current;
@@ -38,15 +44,21 @@ export default function ProjectDetail({ project }: { project: Project }) {
   }
 
   useEffect(() => {
-    thumbRefs.current[selectedImage]?.scrollIntoView({
-      behavior: "smooth",
-      inline: "center",
-      block: "nearest",
-    });
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    const container = thumbStripRef.current;
+    const target = thumbRefs.current[selectedImage];
+    if (!container || !target) return;
+    const targetLeft =
+      target.offsetLeft - (container.clientWidth - target.clientWidth) / 2;
+    container.scrollTo({ left: targetLeft, behavior: "smooth" });
   }, [selectedImage]);
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-4 sm:pt-6 pb-10 sm:pb-16">
+      <h1 className="sr-only">{project.title}</h1>
       {/* Action Buttons */}
       {(project.liveUrl !== "#" || project.githubUrl !== "#") && (
         <AnimatedSection delay={0.1}>
@@ -176,7 +188,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
 
         {/* Thumbnails */}
         {gallery && (
-          <div className="flex overflow-x-auto gap-3 mt-3 pb-2 scrollbar-hide">
+          <div ref={thumbStripRef} className="flex overflow-x-auto gap-3 mt-3 pb-2 scrollbar-hide">
             {gallery.map((img, i) => (
               <button
                 key={i}
