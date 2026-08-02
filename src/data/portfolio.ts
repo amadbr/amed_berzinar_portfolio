@@ -90,6 +90,68 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Next Burger - Digital Restaurant Menu",
+    slug: "next-burger",
+    description:
+      "A modern, professionally designed digital menu for a burger restaurant, with full English, Arabic, and Kurdish support and both dark and light themes. Live at next-burger.com.",
+    longDescription:
+      "Next Burger needed a digital menu that actually matched the quality of their food: bold, modern, and fast, instead of a generic PDF or a clunky template. I designed and built a full menu experience: a hero landing page with the brand front and center, a searchable menu organized into categories (Burgers, Sandwiches, Sides, Rezo, Special Meals, Drinks), and a focused detail view for every item with its photo, description, and price.\n\nSince the restaurant's customers aren't all English speakers, the whole menu is available in English, Arabic, and Kurdish, with a proper language switcher rather than a machine-translated afterthought. It also supports both dark and light themes, so it looks intentional at any time of day. The site is live and running in production at next-burger.com.",
+    highlights: [
+      {
+        label: "What is it?",
+        text: "A fully designed digital menu website for a burger restaurant, built to replace a plain PDF or generic template menu.",
+      },
+      {
+        label: "The problem",
+        text: "The restaurant needed a menu that felt as premium as its food, was easy to browse on a phone, and worked for customers in more than one language.",
+      },
+      {
+        label: "The benefit",
+        text: "A fast, searchable, categorized menu with full English, Arabic, and Kurdish support and both dark and light themes, live at next-burger.com.",
+      },
+      {
+        label: "Who it's for",
+        text: "Restaurant customers browsing the menu on their phone, and the restaurant itself, which gets a modern digital presence instead of a static menu.",
+      },
+    ],
+    tags: [],
+    image:
+      "https://ik.imagekit.io/i0dqqmt1a/portfolio/Next-burger/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2012.54.19.png",
+    imageGroups: [
+      {
+        label: "Digital Menu",
+        orientation: "portrait",
+        images: [
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Next-burger/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2012.54.19.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Next-burger/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2012.55.39.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Next-burger/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2012.54.39.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Next-burger/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2012.54.50.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Next-burger/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2012.55.13.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Next-burger/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2012.55.03.png",
+          "https://ik.imagekit.io/i0dqqmt1a/portfolio/Next-burger/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-08-02%20at%2012.55.28.png",
+        ],
+      },
+    ],
+    liveUrl: "https://next-burger.com",
+    githubUrl: "#",
+    category: "Web App",
+    features: [
+      "Bold, modern landing page introducing the restaurant's brand and a direct link into the menu",
+      "Searchable menu organized into categories: Burgers, Sandwiches, Sides, Rezo, Special Meals, and Drinks",
+      "Dedicated detail view for every item with its photo, full description, and price",
+      "Full English, Arabic, and Kurdish language support with a proper language switcher",
+      "Dark and light theme support so the menu looks right at any time of day",
+      "Fully responsive design built mobile-first, since most customers browse the menu on their phone",
+    ],
+    techDetails:
+      "Next Burger is a fully custom-built digital menu, designed and developed end-to-end rather than assembled from a template. The focus was on presentation: large food photography, a bold typographic brand identity, and a fast, app-like browsing experience across categories, languages, and themes.",
+    challenges:
+      "The main challenge was making a menu that browses like a native app while still being a website anyone can open with a link, no install required. Supporting three languages (including right-to-left Arabic) alongside a full dark/light theme meant every layout had to hold up under both text direction and color scheme changes, not just look right in one default configuration.",
+    role: "Full-Stack Developer",
+    duration: "Completed",
+    status: "Completed",
+  },
+  {
     title: "Omer eSIM - International eSIM Marketplace",
     slug: "omer-esim",
     description:

@@ -284,26 +284,28 @@ export default function ProjectDetail({ project }: { project: Project }) {
       </AnimatedSection>
 
       {/* Tech Stack */}
-      <AnimatedSection delay={0.25}>
-        <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-          Tech Stack
-        </h2>
-        <div className="flex flex-wrap gap-2 mb-10">
-          {project.tags.map((tag) => {
-            const Icon = techIcons[tag];
-            return (
-              <span
-                key={tag}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm rounded-full bg-gray-100 dark:bg-white/5
-                  text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-white/10"
-              >
-                {Icon && <Icon size={14} />}
-                {tag}
-              </span>
-            );
-          })}
-        </div>
-      </AnimatedSection>
+      {project.tags.length > 0 && (
+        <AnimatedSection delay={0.25}>
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            Tech Stack
+          </h2>
+          <div className="flex flex-wrap gap-2 mb-10">
+            {project.tags.map((tag) => {
+              const Icon = techIcons[tag];
+              return (
+                <span
+                  key={tag}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm rounded-full bg-gray-100 dark:bg-white/5
+                    text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-white/10"
+                >
+                  {Icon && <Icon size={14} />}
+                  {tag}
+                </span>
+              );
+            })}
+          </div>
+        </AnimatedSection>
+      )}
 
       {/* Technical Details */}
       <AnimatedSection delay={0.3}>
