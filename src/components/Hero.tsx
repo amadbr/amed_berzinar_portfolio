@@ -3,7 +3,13 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { FiGithub, FiLinkedin, FiInstagram, FiMail } from "react-icons/fi";
+import {
+  FiGithub,
+  FiLinkedin,
+  FiInstagram,
+  FiMail,
+  FiMessageSquare,
+} from "react-icons/fi";
 import { personalInfo, getProjectBySlug } from "@/data/portfolio";
 
 const medkrdProject = getProjectBySlug("medkrd");
@@ -105,12 +111,25 @@ export default function Hero() {
 
                 {/* Always-visible dark tint + tap hint (no :hover — mobile has no hover state) */}
                 <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-sm">
-                  <span className="text-xs font-medium text-white">
+                <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm">
+                  <span className="text-[11px] font-medium text-white">
                     Tap to view details
                   </span>
                 </div>
               </Link>
+
+              <a
+                href="https://berzinar.com/medkrd-feedback"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-full
+                  border border-green-500 text-green-500 dark:text-green-400
+                  hover:bg-green-500 hover:text-white dark:hover:text-white
+                  transition-colors font-medium text-sm"
+              >
+                <FiMessageSquare size={16} />
+                Give Feedback on MEDKRD
+              </a>
             </motion.div>
           )}
 
