@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Fredoka } from "next/font/google";
 import ThemeProvider from "@/components/ThemeProvider";
+import PortfolioAnalytics from "@/components/PortfolioAnalytics";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -41,6 +42,7 @@ export default function RootLayout({
           bg-white dark:bg-gray-950 text-gray-900 dark:text-white transition-colors duration-300`}
       >
         <ThemeProvider>{children}</ThemeProvider>
+        <PortfolioAnalytics />
       </body>
     </html>
   );
